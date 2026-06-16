@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QRCodeSVG } from "qrcode.react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { Download } from "lucide-react";
+
+const WEDDING_URL = "https://pastorrugera-and-sarah.lovable.app";
 
 export const Route = createFileRoute("/share")({
   head: () => ({
@@ -12,12 +14,7 @@ export const Route = createFileRoute("/share")({
 });
 
 function Share() {
-  const [url, setUrl] = useState("");
   const wrapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") setUrl(window.location.origin);
-  }, []);
 
   const download = () => {
     const svg = wrapRef.current?.querySelector("svg");
@@ -34,7 +31,7 @@ function Share() {
       ctx.drawImage(img, 50, 50, 900, 900);
       const a = document.createElement("a");
       a.href = canvas.toDataURL("image/png");
-      a.download = "sarah-and-ruge-qr.png";
+      a.download = "pastorrugera-and-sarah-qr.png";
       a.click();
       URL.revokeObjectURL(u);
     };
@@ -51,10 +48,10 @@ function Share() {
         </p>
 
         <div ref={wrapRef} className="mt-10 inline-block bg-white p-6 shadow-luxe border border-border">
-          {url && <QRCodeSVG value={url} size={240} level="H" fgColor="#1c1a17" />}
+          <QRCodeSVG value={WEDDING_URL} size={240} level="H" fgColor="#1c1a17" />
         </div>
 
-        <p className="mt-6 text-xs text-muted-foreground break-all">{url}</p>
+        <p className="mt-6 text-xs text-muted-foreground break-all">{WEDDING_URL}</p>
 
         <button onClick={download}
           className="mt-8 inline-flex items-center gap-2 px-7 py-3 bg-foreground text-background text-[10px] uppercase tracking-luxe hover:bg-accent hover:text-accent-foreground transition-colors">
