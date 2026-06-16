@@ -53,8 +53,6 @@ export const GALLERY = [
   { src: IMG.couple5, category: "Dates & Adventures" },
   { src: IMG.ring, category: "Proposal" },
   { src: IMG.family, category: "Family Moments" },
-  { src: IMG.venue, category: "Wedding Preparations" },
-  { src: IMG.ceremony, category: "Wedding Preparations" },
   { src: IMG.hero, category: "Engagement" },
 ];
 
