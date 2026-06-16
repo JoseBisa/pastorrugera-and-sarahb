@@ -28,7 +28,7 @@ export const IMG = {
 
 export const WEDDING = {
   bride: "Sarah",
-  groom: "Ruge",
+  groom: "Pastor Rugera",
   dateISO: "2026-12-20T10:00:00+03:00",
   dateLabel: "20 December 2026",
   tagline: "Forever Begins Here",

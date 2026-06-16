@@ -124,7 +124,7 @@ export function SiteNav() {
             <div className="text-center text-white">
               <p className="text-[10px] uppercase tracking-luxe text-white/60">An invitation</p>
               <h2 className="mt-6 font-serif italic text-6xl">
-                Sarah <span className="text-accent">&</span> Ruge
+                R <span className="text-accent">&</span> S
               </h2>
               <div className="gold-rule mx-auto my-6" />
               <p className="text-[11px] uppercase tracking-luxe text-white/70">{WEDDING.dateLabel}</p>
