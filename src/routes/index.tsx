@@ -22,34 +22,44 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[100dvh] -mt-16 flex items-end overflow-hidden">
+      <section className="relative min-h-[100dvh] -mt-16 overflow-hidden">
         <motion.img
           src={IMG.hero}
           alt="Sarah and Ruge"
-          className="absolute inset-0 size-full object-cover"
+          className="absolute inset-0 size-full object-cover object-[60%_30%] sm:object-center"
           initial={{ scale: 1.15 }}
           animate={{ scale: 1 }}
           transition={{ duration: 6, ease: [0.22, 1, 0.36, 1] }}
         />
-        <div className="absolute inset-0 veil" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full px-6 text-center text-white">
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 1 }}
-            className="text-[10px] uppercase tracking-luxe text-white/80">
-            We invite you to celebrate
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 1.2 }}
-            className="mt-6 font-serif text-6xl sm:text-8xl leading-[0.95]">
-            {WEDDING.bride}
-            <span className="block font-display italic text-accent text-5xl sm:text-7xl my-1">&</span>
-            {WEDDING.groom}
+        {/* layered veils for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+
+        {/* Top corner monogram */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 1 }}
+          className="absolute top-24 left-1/2 -translate-x-1/2 text-center text-white"
+        >
+          <p className="text-[10px] uppercase tracking-luxe text-white/80">We invite you</p>
+          <div className="gold-rule mx-auto mt-3" />
+        </motion.div>
+
+        {/* Names — bottom anchored */}
+        <div className="absolute inset-x-0 bottom-0 px-6 pb-16 sm:pb-20 text-center text-white">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 1.4 }}
+            className="font-serif leading-[0.9]"
+          >
+            <span className="block text-6xl sm:text-8xl">{WEDDING.bride}</span>
+            <span className="block font-display italic text-accent text-4xl sm:text-6xl my-2">&</span>
+            <span className="block text-6xl sm:text-8xl">{WEDDING.groom}</span>
           </motion.h1>
-        </div>
-        <div className="relative w-full px-6 pb-12 text-center text-white">
+
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4, duration: 1 }}>
-            <div className="gold-rule mx-auto" />
+            <div className="gold-rule mx-auto mt-8" />
             <p className="mt-5 text-[11px] uppercase tracking-luxe">{WEDDING.dateLabel} · {WEDDING.location}</p>
-            <p className="mt-3 font-display italic text-xl text-white/90">{WEDDING.tagline}</p>
-            <div className="mt-8 flex items-center justify-center gap-4">
+            <p className="mt-3 font-display italic text-lg sm:text-xl text-white/90">{WEDDING.tagline}</p>
+            <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4">
               <Link to="/rsvp" className="px-7 py-3 bg-accent text-accent-foreground text-[10px] uppercase tracking-luxe hover:bg-gold transition-colors">
                 RSVP
               </Link>
@@ -61,6 +71,7 @@ function Home() {
           </motion.div>
         </div>
       </section>
+
 
       {/* WELCOME */}
       <section className="px-6 py-24 sm:py-32 max-w-2xl mx-auto text-center">

@@ -1,4 +1,4 @@
-import hero from "@/assets/IMG-20260616-WA0011.jpg.asset.json";
+import hero from "@/assets/hero-couple.jpg.asset.json";
 import couple1 from "@/assets/IMG-20260616-WA0009.jpg.asset.json";
 import couple2 from "@/assets/IMG-20260616-WA0010.jpg.asset.json";
 import couple3 from "@/assets/IMG-20260616-WA0008.jpg.asset.json";
