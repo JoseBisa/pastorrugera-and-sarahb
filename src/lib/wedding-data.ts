@@ -53,8 +53,6 @@ export const GALLERY = [
   { src: IMG.couple5, category: "Dates & Adventures" },
   { src: IMG.ring, category: "Proposal" },
   { src: IMG.family, category: "Family Moments" },
-  { src: IMG.venue, category: "Wedding Preparations" },
-  { src: IMG.ceremony, category: "Wedding Preparations" },
   { src: IMG.hero, category: "Engagement" },
 ];
 
@@ -66,6 +64,7 @@ export const EVENTS = [
     address: "Masaki, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
     desc: "An elegant church ceremony celebrating the union of Sarah and Ruge.",
+    image: IMG.ceremony,
   },
   {
     title: "Cocktails",
@@ -74,6 +73,7 @@ export const EVENTS = [
     address: "Masaki, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
     desc: "Light refreshments and social gathering after the ceremony.",
+    image: IMG.ceremony,
   },
   {
     title: "Reception",
@@ -82,6 +82,7 @@ export const EVENTS = [
     address: "Bahari Beach, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=JC+Hall+Bahari+Beach+Dar+es+Salaam",
     desc: "Reception, dinner, speeches, dancing, and celebration.",
+    image: IMG.venue,
   },
 ];
 
