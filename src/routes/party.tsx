@@ -5,8 +5,8 @@ import { PARTY } from "@/lib/wedding-data";
 export const Route = createFileRoute("/party")({
   head: () => ({
     meta: [
-      { title: "Wedding Party — Pastor Rugera & Sarah" },
-      { name: "description", content: "Meet the wedding party — the people standing beside Pastor Rugera and Sarah on their day." },
+      { title: "Wedding Party — Pastor Rugera & Sarah.B" },
+      { name: "description", content: "Meet the wedding party — the people standing beside Pastor Rugera and Sarah.B on their day." },
     ],
   }),
   component: Party,
