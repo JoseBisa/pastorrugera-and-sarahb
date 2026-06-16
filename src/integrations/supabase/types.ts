@@ -14,7 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      gift_registry: {
+        Row: {
+          created_at: string
+          gift_description: string
+          id: string
+          music_request: string | null
+          name: string
+          note: string | null
+        }
+        Insert: {
+          created_at?: string
+          gift_description: string
+          id?: string
+          music_request?: string | null
+          name: string
+          note?: string | null
+        }
+        Update: {
+          created_at?: string
+          gift_description?: string
+          id?: string
+          music_request?: string | null
+          name?: string
+          note?: string | null
+        }
+        Relationships: []
+      }
+      guestbook: {
+        Row: {
+          approved: boolean
+          created_at: string
+          id: string
+          location: string | null
+          message: string
+          name: string
+        }
+        Insert: {
+          approved?: boolean
+          created_at?: string
+          id?: string
+          location?: string | null
+          message: string
+          name: string
+        }
+        Update: {
+          approved?: boolean
+          created_at?: string
+          id?: string
+          location?: string | null
+          message?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      rsvps: {
+        Row: {
+          attending: boolean
+          created_at: string
+          dietary: string | null
+          email: string | null
+          full_name: string
+          guest_count: number
+          id: string
+          phone: string | null
+          special_requests: string | null
+        }
+        Insert: {
+          attending: boolean
+          created_at?: string
+          dietary?: string | null
+          email?: string | null
+          full_name: string
+          guest_count?: number
+          id?: string
+          phone?: string | null
+          special_requests?: string | null
+        }
+        Update: {
+          attending?: boolean
+          created_at?: string
+          dietary?: string | null
+          email?: string | null
+          full_name?: string
+          guest_count?: number
+          id?: string
+          phone?: string | null
+          special_requests?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
