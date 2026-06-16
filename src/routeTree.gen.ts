@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StoryRouteImport } from './routes/story'
+import { Route as RsvpRouteImport } from './routes/rsvp'
+import { Route as RegistryRouteImport } from './routes/registry'
 import { Route as PartyRouteImport } from './routes/party'
+import { Route as GuestbookRouteImport } from './routes/guestbook'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as DetailsRouteImport } from './routes/details'
 import { Route as IndexRouteImport } from './routes/index'
@@ -20,9 +23,24 @@ const StoryRoute = StoryRouteImport.update({
   path: '/story',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RsvpRoute = RsvpRouteImport.update({
+  id: '/rsvp',
+  path: '/rsvp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegistryRoute = RegistryRouteImport.update({
+  id: '/registry',
+  path: '/registry',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PartyRoute = PartyRouteImport.update({
   id: '/party',
   path: '/party',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuestbookRoute = GuestbookRouteImport.update({
+  id: '/guestbook',
+  path: '/guestbook',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -45,14 +63,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/details': typeof DetailsRoute
   '/gallery': typeof GalleryRoute
+  '/guestbook': typeof GuestbookRoute
   '/party': typeof PartyRoute
+  '/registry': typeof RegistryRoute
+  '/rsvp': typeof RsvpRoute
   '/story': typeof StoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/details': typeof DetailsRoute
   '/gallery': typeof GalleryRoute
+  '/guestbook': typeof GuestbookRoute
   '/party': typeof PartyRoute
+  '/registry': typeof RegistryRoute
+  '/rsvp': typeof RsvpRoute
   '/story': typeof StoryRoute
 }
 export interface FileRoutesById {
@@ -60,22 +84,53 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/details': typeof DetailsRoute
   '/gallery': typeof GalleryRoute
+  '/guestbook': typeof GuestbookRoute
   '/party': typeof PartyRoute
+  '/registry': typeof RegistryRoute
+  '/rsvp': typeof RsvpRoute
   '/story': typeof StoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/details' | '/gallery' | '/party' | '/story'
+  fullPaths:
+    | '/'
+    | '/details'
+    | '/gallery'
+    | '/guestbook'
+    | '/party'
+    | '/registry'
+    | '/rsvp'
+    | '/story'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/details' | '/gallery' | '/party' | '/story'
-  id: '__root__' | '/' | '/details' | '/gallery' | '/party' | '/story'
+  to:
+    | '/'
+    | '/details'
+    | '/gallery'
+    | '/guestbook'
+    | '/party'
+    | '/registry'
+    | '/rsvp'
+    | '/story'
+  id:
+    | '__root__'
+    | '/'
+    | '/details'
+    | '/gallery'
+    | '/guestbook'
+    | '/party'
+    | '/registry'
+    | '/rsvp'
+    | '/story'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DetailsRoute: typeof DetailsRoute
   GalleryRoute: typeof GalleryRoute
+  GuestbookRoute: typeof GuestbookRoute
   PartyRoute: typeof PartyRoute
+  RegistryRoute: typeof RegistryRoute
+  RsvpRoute: typeof RsvpRoute
   StoryRoute: typeof StoryRoute
 }
 
@@ -88,11 +143,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rsvp': {
+      id: '/rsvp'
+      path: '/rsvp'
+      fullPath: '/rsvp'
+      preLoaderRoute: typeof RsvpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/registry': {
+      id: '/registry'
+      path: '/registry'
+      fullPath: '/registry'
+      preLoaderRoute: typeof RegistryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/party': {
       id: '/party'
       path: '/party'
       fullPath: '/party'
       preLoaderRoute: typeof PartyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guestbook': {
+      id: '/guestbook'
+      path: '/guestbook'
+      fullPath: '/guestbook'
+      preLoaderRoute: typeof GuestbookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -123,7 +199,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DetailsRoute: DetailsRoute,
   GalleryRoute: GalleryRoute,
+  GuestbookRoute: GuestbookRoute,
   PartyRoute: PartyRoute,
+  RegistryRoute: RegistryRoute,
+  RsvpRoute: RsvpRoute,
   StoryRoute: StoryRoute,
 }
 export const routeTree = rootRouteImport
