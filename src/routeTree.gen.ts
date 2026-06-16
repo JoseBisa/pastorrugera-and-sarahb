@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StoryRouteImport } from './routes/story'
+import { Route as ShareRouteImport } from './routes/share'
 import { Route as RsvpRouteImport } from './routes/rsvp'
 import { Route as RegistryRouteImport } from './routes/registry'
 import { Route as PartyRouteImport } from './routes/party'
@@ -21,6 +22,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const StoryRoute = StoryRouteImport.update({
   id: '/story',
   path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShareRoute = ShareRouteImport.update({
+  id: '/share',
+  path: '/share',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RsvpRoute = RsvpRouteImport.update({
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/party': typeof PartyRoute
   '/registry': typeof RegistryRoute
   '/rsvp': typeof RsvpRoute
+  '/share': typeof ShareRoute
   '/story': typeof StoryRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/party': typeof PartyRoute
   '/registry': typeof RegistryRoute
   '/rsvp': typeof RsvpRoute
+  '/share': typeof ShareRoute
   '/story': typeof StoryRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/party': typeof PartyRoute
   '/registry': typeof RegistryRoute
   '/rsvp': typeof RsvpRoute
+  '/share': typeof ShareRoute
   '/story': typeof StoryRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/party'
     | '/registry'
     | '/rsvp'
+    | '/share'
     | '/story'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/party'
     | '/registry'
     | '/rsvp'
+    | '/share'
     | '/story'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/party'
     | '/registry'
     | '/rsvp'
+    | '/share'
     | '/story'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   PartyRoute: typeof PartyRoute
   RegistryRoute: typeof RegistryRoute
   RsvpRoute: typeof RsvpRoute
+  ShareRoute: typeof ShareRoute
   StoryRoute: typeof StoryRoute
 }
 
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/story'
       fullPath: '/story'
       preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/share': {
+      id: '/share'
+      path: '/share'
+      fullPath: '/share'
+      preLoaderRoute: typeof ShareRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rsvp': {
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartyRoute: PartyRoute,
   RegistryRoute: RegistryRoute,
   RsvpRoute: RsvpRoute,
+  ShareRoute: ShareRoute,
   StoryRoute: StoryRoute,
 }
 export const routeTree = rootRouteImport
