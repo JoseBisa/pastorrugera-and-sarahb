@@ -9,6 +9,18 @@ export function SiteFooter() {
           "And so the adventure begins."
         </p>
       </div>
+      <div className="border-t border-border/40 px-6 py-5">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] uppercase tracking-luxe text-muted-foreground/70">
+          <p>© 2026 Sarah & Ruge</p>
+          <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <span>Crafted by Joe Bisanda</span>
+            <span className="hidden sm:inline opacity-50">·</span>
+            <a href="tel:+255710749380" className="hover:text-accent transition-colors normal-case tracking-normal">+255 71 074 9380</a>
+            <span className="hidden sm:inline opacity-50">·</span>
+            <a href="mailto:joebisanda@gmail.com" className="hover:text-accent transition-colors normal-case tracking-normal">joebisanda@gmail.com</a>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }
