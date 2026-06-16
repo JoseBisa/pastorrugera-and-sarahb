@@ -6,8 +6,8 @@ import { MapPin, Clock, Shirt } from "lucide-react";
 export const Route = createFileRoute("/details")({
   head: () => ({
     meta: [
-      { title: "Wedding Details — Sarah & Ruge" },
-      { name: "description", content: "All the details for Sarah and Ruge's wedding day — ceremony, reception, dress code, and directions." },
+      { title: "Wedding Details — Pastor Rugera & Sarah" },
+      { name: "description", content: "All the details for Pastor Rugera and Sarah's wedding day — ceremony, reception, dress code, and directions." },
     ],
   }),
   component: Details,

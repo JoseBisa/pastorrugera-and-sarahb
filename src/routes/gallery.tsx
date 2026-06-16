@@ -8,8 +8,8 @@ import { GALLERY } from "@/lib/wedding-data";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Sarah & Ruge" },
-      { name: "description", content: "Moments and memories — a curated gallery from Sarah and Ruge's journey." },
+      { title: "Gallery — Pastor Rugera & Sarah" },
+      { name: "description", content: "Moments and memories — a curated gallery from Pastor Rugera and Sarah's journey." },
     ],
   }),
   component: Gallery,

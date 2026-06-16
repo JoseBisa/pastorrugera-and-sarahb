@@ -63,7 +63,7 @@ export const EVENTS = [
     venue: "Masaki English SDA Church",
     address: "Masaki, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
-    desc: "An elegant church ceremony celebrating the union of Sarah and Ruge.",
+    desc: "An elegant church ceremony celebrating the union of Pastor Rugera and Sarah.",
     image: IMG.ceremony,
   },
   {

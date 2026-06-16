@@ -8,9 +8,9 @@ import { ChevronDown, MapPin, Clock, Sparkles } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sarah & Ruge — Wedding · 20 December 2026" },
-      { name: "description", content: "Forever begins here. Sarah and Ruge wedding celebration in Dar es Salaam, Tanzania." },
-      { property: "og:title", content: "Sarah & Ruge" },
+      { title: "Pastor Rugera & Sarah — Wedding · 20 December 2026" },
+      { name: "description", content: "Forever begins here. Pastor Rugera and Sarah wedding celebration in Dar es Salaam, Tanzania." },
+      { property: "og:title", content: "Pastor Rugera & Sarah" },
       { property: "og:description", content: "Forever begins here. 20 December 2026." },
       { property: "og:image", content: IMG.hero },
     ],
@@ -25,7 +25,7 @@ function Home() {
       <section className="relative min-h-[100dvh] -mt-16 overflow-hidden">
         <motion.img
           src={IMG.hero}
-          alt="Sarah and Ruge"
+          alt="Pastor Rugera and Sarah"
           className="absolute inset-0 size-full object-cover object-[60%_30%] sm:object-center"
           initial={{ scale: 1.15 }}
           animate={{ scale: 1 }}
@@ -86,7 +86,7 @@ function Home() {
             Request the pleasure of your company as we celebrate our marriage in the heart of Tanzania.
             Your presence is the greatest gift — come share the joy, the laughter, and the love.
           </p>
-          <p className="mt-6 font-serif text-2xl text-accent">— Sarah & Ruge</p>
+          <p className="mt-6 font-serif text-2xl text-accent">— Pastor Rugera & Sarah</p>
         </Reveal>
       </section>
 

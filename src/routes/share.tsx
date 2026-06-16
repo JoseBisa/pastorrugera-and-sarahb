@@ -6,7 +6,7 @@ import { Download } from "lucide-react";
 
 export const Route = createFileRoute("/share")({
   head: () => ({
-    meta: [{ title: "Share — Sarah & Ruge" }],
+    meta: [{ title: "Share — Pastor Rugera & Sarah" }],
   }),
   component: Share,
 });

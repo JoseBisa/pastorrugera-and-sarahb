@@ -7,8 +7,8 @@ import { STORY } from "@/lib/wedding-data";
 export const Route = createFileRoute("/story")({
   head: () => ({
     meta: [
-      { title: "Our Story — Sarah & Ruge" },
-      { name: "description", content: "The story of how Sarah and Ruge found each other — from a first laugh to forever." },
+      { title: "Our Story — Pastor Rugera & Sarah" },
+      { name: "description", content: "The story of how Pastor Rugera and Sarah found each other — from a first laugh to forever." },
     ],
   }),
   component: Story,

@@ -11,7 +11,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border/40 px-6 py-5">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] uppercase tracking-luxe text-muted-foreground/70">
-          <p>© 2026 Sarah & Ruge</p>
+          <p>© 2026 Pastor Rugera & Sarah</p>
           <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
             <span>Crafted by Joe Bisanda</span>
             <span className="hidden sm:inline opacity-50">·</span>

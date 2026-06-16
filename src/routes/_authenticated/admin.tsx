@@ -109,7 +109,7 @@ function AdminPage() {
       <header className="flex flex-wrap items-end justify-between gap-4 mb-10">
         <div>
           <p className="text-[10px] uppercase tracking-luxe text-accent">Wedding Dashboard</p>
-          <h1 className="font-serif text-4xl sm:text-5xl mt-2">Sarah &amp; Ruge · Admin</h1>
+          <h1 className="font-serif text-4xl sm:text-5xl mt-2">Pastor Rugera &amp; Sarah · Admin</h1>
         </div>
         <button onClick={signOut} className="inline-flex items-center gap-2 px-4 py-2 border text-[11px] uppercase tracking-luxe hover:bg-foreground hover:text-background">
           <LogOut className="size-3.5" /> Sign out
