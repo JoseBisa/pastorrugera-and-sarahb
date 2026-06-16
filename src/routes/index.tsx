@@ -35,20 +35,21 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
 
-        {/* Top corner monogram */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 1 }}
-          className="absolute top-24 left-1/2 -translate-x-1/2 text-center text-white"
-        >
-          <p className="text-[10px] uppercase tracking-luxe text-white/80">We invite you</p>
-          <div className="gold-rule mx-auto mt-3" />
-        </motion.div>
+        {/* Names — bottom anchored, with prominent invitation badge */}
+        <div className="absolute inset-x-0 bottom-0 px-6 pb-14 sm:pb-20 text-center text-white">
+          {/* Invitation badge — high contrast pill so it's always legible */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 1 }}
+            className="inline-flex flex-col items-center gap-3 px-6 py-3 mb-8 rounded-full bg-charcoal/70 backdrop-blur-md border border-accent/50 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+          >
+            <p className="text-[10px] sm:text-[11px] uppercase tracking-luxe text-accent">
+              ✦  We invite you  ✦
+            </p>
+          </motion.div>
 
-        {/* Names — bottom anchored */}
-        <div className="absolute inset-x-0 bottom-0 px-6 pb-16 sm:pb-20 text-center text-white">
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 1.4 }}
-            className="font-serif leading-[0.9]"
+            className="font-serif leading-[0.9] drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)]"
           >
             <span className="block text-6xl sm:text-8xl">{WEDDING.bride}</span>
             <span className="block font-display italic text-accent text-4xl sm:text-6xl my-2">&</span>
@@ -146,7 +147,7 @@ function Home() {
 
       {/* GALLERY CTA */}
       <section className="grid grid-cols-2 sm:grid-cols-4">
-        {[IMG.couple1, IMG.couple3, IMG.couple4, IMG.couple5].map((src, i) => (
+        {[IMG.resort, IMG.street, IMG.couple3, IMG.couple5].map((src, i) => (
           <motion.div key={i} className="aspect-square overflow-hidden group"
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.8 }}>
             <img src={src} alt="" className="size-full object-cover group-hover:scale-105 transition-transform duration-[2s]" />

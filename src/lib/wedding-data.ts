@@ -1,4 +1,6 @@
 import hero from "@/assets/hero-couple.jpg.asset.json";
+import resort from "@/assets/couple-resort.jpg.asset.json";
+import street from "@/assets/couple-street.jpg.asset.json";
 import couple1 from "@/assets/IMG-20260616-WA0009.jpg.asset.json";
 import couple2 from "@/assets/IMG-20260616-WA0010.jpg.asset.json";
 import couple3 from "@/assets/IMG-20260616-WA0008.jpg.asset.json";
@@ -11,6 +13,8 @@ import ceremony from "@/assets/IMG-20260616-WA0003.jpg.asset.json";
 
 export const IMG = {
   hero: hero.url,
+  resort: resort.url,
+  street: street.url,
   couple1: couple1.url,
   couple2: couple2.url,
   couple3: couple3.url,
@@ -40,6 +44,8 @@ export const STORY = [
 ];
 
 export const GALLERY = [
+  { src: IMG.resort, category: "Dates & Adventures" },
+  { src: IMG.street, category: "Engagement" },
   { src: IMG.couple1, category: "Engagement" },
   { src: IMG.couple2, category: "Dates & Adventures" },
   { src: IMG.couple3, category: "Family Moments" },
