@@ -9,8 +9,8 @@ import { Gift, Music, Check } from "lucide-react";
 export const Route = createFileRoute("/registry")({
   head: () => ({
     meta: [
-      { title: "Gift Registry — Pastor Rugera & Sarah.B" },
-      { name: "description", content: "Share a gift, request a song — celebrate Pastor Rugera and Sarah.B in your own way." },
+      { title: "Gift Registry — Pastor Rugera & Sarah B" },
+      { name: "description", content: "Share a gift, request a song — celebrate Pastor Rugera and Sarah B in your own way." },
     ],
   }),
   component: Registry,

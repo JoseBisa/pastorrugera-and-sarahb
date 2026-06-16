@@ -8,7 +8,7 @@ const WEDDING_URL = "https://pastorrugera-and-sarah.lovable.app";
 
 export const Route = createFileRoute("/share")({
   head: () => ({
-    meta: [{ title: "Share — Pastor Rugera & Sarah.B" }],
+    meta: [{ title: "Share — Pastor Rugera & Sarah B" }],
   }),
   component: Share,
 });

@@ -27,7 +27,7 @@ export const IMG = {
 };
 
 export const WEDDING = {
-  bride: "Sarah.B",
+  bride: "Sarah B",
   groom: "Pastor Rugera",
   dateISO: "2026-12-20T10:00:00+03:00",
   dateLabel: "20 December 2026",
@@ -63,7 +63,7 @@ export const EVENTS = [
     venue: "Masaki English SDA Church",
     address: "Masaki, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
-    desc: "An elegant church ceremony celebrating the union of Pastor Rugera and Sarah.B.",
+    desc: "An elegant church ceremony celebrating the union of Pastor Rugera and Sarah B.",
     image: IMG.ceremony,
   },
   {
@@ -88,7 +88,7 @@ export const EVENTS = [
 
 export const PARTY = {
   bride: [
-    { name: "Amani Mushi", role: "Maid of Honor", bio: "Sarah.B's sister and lifelong confidante." },
+    { name: "Amani Mushi", role: "Maid of Honor", bio: "Sarah B's sister and lifelong confidante." },
     { name: "Neema Joseph", role: "Bridesmaid", bio: "University best friend and travel partner." },
     { name: "Zawadi Kimaro", role: "Bridesmaid", bio: "Cousin, sister at heart, the steady one." },
     { name: "Halima Said", role: "Bridesmaid", bio: "Childhood friend from Mwanza." },

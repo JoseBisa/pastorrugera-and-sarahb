@@ -9,8 +9,8 @@ import { Check } from "lucide-react";
 export const Route = createFileRoute("/rsvp")({
   head: () => ({
     meta: [
-      { title: "RSVP — Pastor Rugera & Sarah.B" },
-      { name: "description", content: "Kindly respond to Pastor Rugera and Sarah.B's wedding invitation." },
+      { title: "RSVP — Pastor Rugera & Sarah B" },
+      { name: "description", content: "Kindly respond to Pastor Rugera and Sarah B's wedding invitation." },
     ],
   }),
   component: Rsvp,
