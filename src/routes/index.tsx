@@ -51,9 +51,9 @@ function Home() {
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 1.4 }}
             className="font-serif leading-[0.9] drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)]"
           >
-            <span className="block text-6xl sm:text-8xl">{WEDDING.bride}</span>
+            <span className="block text-5xl sm:text-7xl">{WEDDING.groom}</span>
             <span className="block font-display italic text-accent text-4xl sm:text-6xl my-2">&</span>
-            <span className="block text-6xl sm:text-8xl">{WEDDING.groom}</span>
+            <span className="block text-6xl sm:text-8xl">{WEDDING.bride}</span>
           </motion.h1>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4, duration: 1 }}>
