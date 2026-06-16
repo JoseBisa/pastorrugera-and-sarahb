@@ -9,8 +9,56 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StoryRouteImport } from './routes/story'
+import { Route as ShareRouteImport } from './routes/share'
+import { Route as RsvpRouteImport } from './routes/rsvp'
+import { Route as RegistryRouteImport } from './routes/registry'
+import { Route as PartyRouteImport } from './routes/party'
+import { Route as GuestbookRouteImport } from './routes/guestbook'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as DetailsRouteImport } from './routes/details'
 import { Route as IndexRouteImport } from './routes/index'
 
+const StoryRoute = StoryRouteImport.update({
+  id: '/story',
+  path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShareRoute = ShareRouteImport.update({
+  id: '/share',
+  path: '/share',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RsvpRoute = RsvpRouteImport.update({
+  id: '/rsvp',
+  path: '/rsvp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegistryRoute = RegistryRouteImport.update({
+  id: '/registry',
+  path: '/registry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartyRoute = PartyRouteImport.update({
+  id: '/party',
+  path: '/party',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuestbookRoute = GuestbookRouteImport.update({
+  id: '/guestbook',
+  path: '/guestbook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DetailsRoute = DetailsRouteImport.update({
+  id: '/details',
+  path: '/details',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +67,144 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/details': typeof DetailsRoute
+  '/gallery': typeof GalleryRoute
+  '/guestbook': typeof GuestbookRoute
+  '/party': typeof PartyRoute
+  '/registry': typeof RegistryRoute
+  '/rsvp': typeof RsvpRoute
+  '/share': typeof ShareRoute
+  '/story': typeof StoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/details': typeof DetailsRoute
+  '/gallery': typeof GalleryRoute
+  '/guestbook': typeof GuestbookRoute
+  '/party': typeof PartyRoute
+  '/registry': typeof RegistryRoute
+  '/rsvp': typeof RsvpRoute
+  '/share': typeof ShareRoute
+  '/story': typeof StoryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/details': typeof DetailsRoute
+  '/gallery': typeof GalleryRoute
+  '/guestbook': typeof GuestbookRoute
+  '/party': typeof PartyRoute
+  '/registry': typeof RegistryRoute
+  '/rsvp': typeof RsvpRoute
+  '/share': typeof ShareRoute
+  '/story': typeof StoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/details'
+    | '/gallery'
+    | '/guestbook'
+    | '/party'
+    | '/registry'
+    | '/rsvp'
+    | '/share'
+    | '/story'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/details'
+    | '/gallery'
+    | '/guestbook'
+    | '/party'
+    | '/registry'
+    | '/rsvp'
+    | '/share'
+    | '/story'
+  id:
+    | '__root__'
+    | '/'
+    | '/details'
+    | '/gallery'
+    | '/guestbook'
+    | '/party'
+    | '/registry'
+    | '/rsvp'
+    | '/share'
+    | '/story'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DetailsRoute: typeof DetailsRoute
+  GalleryRoute: typeof GalleryRoute
+  GuestbookRoute: typeof GuestbookRoute
+  PartyRoute: typeof PartyRoute
+  RegistryRoute: typeof RegistryRoute
+  RsvpRoute: typeof RsvpRoute
+  ShareRoute: typeof ShareRoute
+  StoryRoute: typeof StoryRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/story': {
+      id: '/story'
+      path: '/story'
+      fullPath: '/story'
+      preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/share': {
+      id: '/share'
+      path: '/share'
+      fullPath: '/share'
+      preLoaderRoute: typeof ShareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rsvp': {
+      id: '/rsvp'
+      path: '/rsvp'
+      fullPath: '/rsvp'
+      preLoaderRoute: typeof RsvpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/registry': {
+      id: '/registry'
+      path: '/registry'
+      fullPath: '/registry'
+      preLoaderRoute: typeof RegistryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/party': {
+      id: '/party'
+      path: '/party'
+      fullPath: '/party'
+      preLoaderRoute: typeof PartyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guestbook': {
+      id: '/guestbook'
+      path: '/guestbook'
+      fullPath: '/guestbook'
+      preLoaderRoute: typeof GuestbookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/details': {
+      id: '/details'
+      path: '/details'
+      fullPath: '/details'
+      preLoaderRoute: typeof DetailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +217,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DetailsRoute: DetailsRoute,
+  GalleryRoute: GalleryRoute,
+  GuestbookRoute: GuestbookRoute,
+  PartyRoute: PartyRoute,
+  RegistryRoute: RegistryRoute,
+  RsvpRoute: RsvpRoute,
+  ShareRoute: ShareRoute,
+  StoryRoute: StoryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
