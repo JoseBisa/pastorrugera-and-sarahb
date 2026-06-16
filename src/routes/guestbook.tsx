@@ -9,8 +9,8 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/guestbook")({
   head: () => ({
     meta: [
-      { title: "Guestbook — Pastor Rugera & Sarah.B" },
-      { name: "description", content: "Leave a message of love for Pastor Rugera and Sarah.B." },
+      { title: "Guestbook — Pastor Rugera & Sarah B" },
+      { name: "description", content: "Leave a message of love for Pastor Rugera and Sarah B." },
     ],
   }),
   component: Guestbook,
