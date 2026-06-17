@@ -12,7 +12,13 @@ export const Route = createFileRoute("/party")({
   component: Party,
 });
 
+function firstName(full: string) {
+  return full.split(" ")[0];
+}
+
 function Party() {
+  const members = [...PARTY.bride, ...PARTY.groom];
+
   return (
     <>
       <section className="px-6 py-20 text-center">
@@ -25,30 +31,19 @@ function Party() {
         </Reveal>
       </section>
 
-      {([["Bride's Team", PARTY.bride], ["Groom's Team", PARTY.groom]] as const).map(([title, members]) => (
-        <section key={title} className="px-6 py-16 max-w-6xl mx-auto">
-          <Reveal className="text-center mb-12">
-            <p className="text-[10px] uppercase tracking-luxe text-accent">{title}</p>
-            <h2 className="mt-3 font-serif text-4xl">{title === "Bride's Team" ? "Her Side" : "His Side"}</h2>
-          </Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10">
-            {members.map((m, i) => (
-              <Reveal key={m.name} delay={i * 0.08}>
-                <div className="text-center">
-                  <div className="aspect-[3/4] bg-secondary border border-border mb-4 overflow-hidden">
-                    <div className="size-full flex items-center justify-center font-serif text-5xl text-accent/40">
-                      {m.name.split(" ").map(n => n[0]).join("")}
-                    </div>
-                  </div>
-                  <p className="text-[10px] uppercase tracking-luxe text-accent">{m.role}</p>
-                  <p className="mt-1 font-serif text-xl">{m.name}</p>
-                  <p className="mt-2 text-xs text-muted-foreground italic">{m.bio}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-      ))}
+      <section className="px-6 pb-24 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-10">
+          {members.map((m, i) => (
+            <Reveal key={m.name} delay={i * 0.05}>
+              <div className="text-center">
+                <p className="text-[10px] uppercase tracking-luxe text-accent">{m.role}</p>
+                <p className="mt-3 font-serif text-2xl">{firstName(m.name)}</p>
+                <div className="gold-rule mx-auto mt-4" />
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
