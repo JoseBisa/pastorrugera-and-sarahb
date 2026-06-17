@@ -215,6 +215,9 @@ function AdminPage() {
           {guestbook.length === 0 && <p className="text-center text-muted-foreground py-12">No messages yet.</p>}
         </div>
       )}
+
+      {tab === "contributions" && <AdminPaymentMethods />}
+      {tab === "images" && <AdminLocationImages />}
     </main>
   );
 }
