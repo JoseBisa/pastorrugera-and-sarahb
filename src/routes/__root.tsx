@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { GuestGate } from "@/components/GuestGate";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFound() {
@@ -79,11 +80,13 @@ function RootComponent() {
   const path = useRouterState({ select: s => s.location.pathname });
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteNav />
-      <main key={path} className="pt-16 animate-fade-up">
-        <Outlet />
-      </main>
-      <SiteFooter />
+      <GuestGate>
+        <SiteNav />
+        <main key={path} className="pt-16 animate-fade-up">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </GuestGate>
       <Toaster />
     </QueryClientProvider>
   );

@@ -17,6 +17,7 @@ import { Route as PartyRouteImport } from './routes/party'
 import { Route as GuestbookRouteImport } from './routes/guestbook'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as DetailsRouteImport } from './routes/details'
+import { Route as DarEsSalaamRouteImport } from './routes/dar-es-salaam'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
@@ -62,6 +63,11 @@ const DetailsRoute = DetailsRouteImport.update({
   path: '/details',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DarEsSalaamRoute = DarEsSalaamRouteImport.update({
+  id: '/dar-es-salaam',
+  path: '/dar-es-salaam',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -85,6 +91,7 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/dar-es-salaam': typeof DarEsSalaamRoute
   '/details': typeof DetailsRoute
   '/gallery': typeof GalleryRoute
   '/guestbook': typeof GuestbookRoute
@@ -98,6 +105,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/dar-es-salaam': typeof DarEsSalaamRoute
   '/details': typeof DetailsRoute
   '/gallery': typeof GalleryRoute
   '/guestbook': typeof GuestbookRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/dar-es-salaam': typeof DarEsSalaamRoute
   '/details': typeof DetailsRoute
   '/gallery': typeof GalleryRoute
   '/guestbook': typeof GuestbookRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/dar-es-salaam'
     | '/details'
     | '/gallery'
     | '/guestbook'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth'
+    | '/dar-es-salaam'
     | '/details'
     | '/gallery'
     | '/guestbook'
@@ -155,6 +166,7 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/dar-es-salaam'
     | '/details'
     | '/gallery'
     | '/guestbook'
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  DarEsSalaamRoute: typeof DarEsSalaamRoute
   DetailsRoute: typeof DetailsRoute
   GalleryRoute: typeof GalleryRoute
   GuestbookRoute: typeof GuestbookRoute
@@ -238,6 +251,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DetailsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dar-es-salaam': {
+      id: '/dar-es-salaam'
+      path: '/dar-es-salaam'
+      fullPath: '/dar-es-salaam'
+      preLoaderRoute: typeof DarEsSalaamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -284,6 +304,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  DarEsSalaamRoute: DarEsSalaamRoute,
   DetailsRoute: DetailsRoute,
   GalleryRoute: GalleryRoute,
   GuestbookRoute: GuestbookRoute,
@@ -296,13 +317,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -63,9 +63,7 @@ function Details() {
           <div className="gold-rule mx-auto my-6" />
           <p className="font-display italic text-2xl">Black Tie & Elegant Dress</p>
           <p className="mt-6 text-muted-foreground leading-relaxed">
-            We invite our guests to dress in their most refined attire. Gentlemen in tuxedos or dark suits;
-            ladies in elegant gowns or cocktail dresses. Think timeless silhouettes, soft champagne and ivory,
-            or the deep, rich tones of a Tanzanian evening.
+            We invite our guests to dress in their most refined attire. Gentlemen in tuxedos or dark suits; ladies in elegant gowns.
           </p>
         </Reveal>
       </section>
