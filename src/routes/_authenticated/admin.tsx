@@ -119,7 +119,7 @@ function AdminPage() {
       </header>
 
       <nav className="flex gap-1 border-b border-border mb-8">
-        {(["overview", "rsvps", "guestbook"] as const).map(t => (
+        {(["overview", "rsvps", "guestbook", "contributions", "images"] as const).map(t => (
           <button key={t}
             onClick={() => setTab(t)}
             className={`px-5 py-3 text-[11px] uppercase tracking-luxe border-b-2 -mb-px transition-colors ${
