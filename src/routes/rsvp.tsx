@@ -195,6 +195,8 @@ function Rsvp() {
           </Reveal>
         )}
       </section>
+
+      <Contributions />
     </>
   );
 }
