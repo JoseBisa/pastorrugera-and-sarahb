@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Check } from "lucide-react";
+import { Check, Copy, Gift, Smartphone, Building2, Wallet } from "lucide-react";
 
 export const Route = createFileRoute("/rsvp")({
   head: () => ({
@@ -15,6 +15,69 @@ export const Route = createFileRoute("/rsvp")({
   }),
   component: Rsvp,
 });
+
+function Contributions() {
+  const { data } = useQuery({
+    queryKey: ["payment-methods"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("payment_methods")
+        .select("*")
+        .eq("active", true)
+        .order("sort_order", { ascending: true })
+        .order("created_at", { ascending: true });
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  if (!data || data.length === 0) return null;
+
+  const iconFor = (t: string) =>
+    t === "bank" ? <Building2 className="size-4" /> : t === "mobile" ? <Smartphone className="size-4" /> : <Wallet className="size-4" />;
+
+  return (
+    <section className="px-6 max-w-2xl mx-auto pb-24">
+      <Reveal>
+        <div className="border border-border bg-card p-7 sm:p-10">
+          <div className="text-center">
+            <Gift className="size-7 text-accent mx-auto" />
+            <h2 className="mt-4 font-serif text-3xl">Contributions</h2>
+            <div className="gold-rule mx-auto my-5" />
+            <p className="font-display italic text-foreground/80 max-w-md mx-auto">
+              Your presence is our greatest gift. For those who wish to bless us further, contributions may be sent to any of the accounts below.
+            </p>
+          </div>
+          <div className="mt-8 space-y-4">
+            {data.map((m) => (
+              <div key={m.id} className="border border-border p-5 hover:border-accent transition-colors">
+                <div className="flex items-center gap-2 text-accent">
+                  {iconFor(m.method_type)}
+                  <p className="text-[10px] uppercase tracking-luxe">{m.label}</p>
+                </div>
+                {m.account_name && <p className="mt-2 font-serif text-lg">{m.account_name}</p>}
+                <div className="mt-2 flex items-center justify-between gap-3">
+                  <p className="font-mono text-base break-all">{m.account_number}</p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText(m.account_number);
+                      toast.success("Copied");
+                    }}
+                    className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 border text-[10px] uppercase tracking-luxe hover:bg-foreground hover:text-background"
+                  >
+                    <Copy className="size-3" /> Copy
+                  </button>
+                </div>
+                {m.instructions && <p className="mt-3 text-xs text-muted-foreground leading-relaxed">{m.instructions}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
 
 function Rsvp() {
   const [form, setForm] = useState({
@@ -132,6 +195,8 @@ function Rsvp() {
           </Reveal>
         )}
       </section>
+
+      <Contributions />
     </>
   );
 }
