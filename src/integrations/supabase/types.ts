@@ -68,6 +68,69 @@ export type Database = {
         }
         Relationships: []
       }
+      location_images: {
+        Row: {
+          created_at: string
+          id: string
+          image_url: string
+          location_key: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          image_url: string
+          location_key: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          image_url?: string
+          location_key?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      payment_methods: {
+        Row: {
+          account_name: string | null
+          account_number: string
+          active: boolean
+          created_at: string
+          id: string
+          instructions: string | null
+          label: string
+          method_type: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          account_name?: string | null
+          account_number: string
+          active?: boolean
+          created_at?: string
+          id?: string
+          instructions?: string | null
+          label: string
+          method_type?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          account_name?: string | null
+          account_number?: string
+          active?: boolean
+          created_at?: string
+          id?: string
+          instructions?: string | null
+          label?: string
+          method_type?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       rsvps: {
         Row: {
           attending: boolean
