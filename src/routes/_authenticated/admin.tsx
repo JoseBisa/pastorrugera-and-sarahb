@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import { Users, Heart, MessageSquare, Calendar, LogOut, Download, Trash2, Eye, EyeOff } from "lucide-react";
 import { AdminPaymentMethods } from "@/components/admin/AdminPaymentMethods";
 import { AdminLocationImages } from "@/components/admin/AdminLocationImages";
+import { AdminGallery } from "@/components/admin/AdminGallery";
 
 export const Route = createFileRoute("/_authenticated/admin")({
   component: AdminPage,
