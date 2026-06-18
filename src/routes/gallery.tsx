@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { GALLERY } from "@/lib/wedding-data";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -20,7 +22,21 @@ const CATEGORIES = ["All", "Proposal", "Engagement", "Dates & Adventures", "Fami
 function Gallery() {
   const [cat, setCat] = useState("All");
   const [active, setActive] = useState<number | null>(null);
-  const items = cat === "All" ? GALLERY : GALLERY.filter(g => g.category === cat);
+
+  const uploads = useQuery({
+    queryKey: ["gallery-images"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("gallery_images")
+        .select("image_url,category,created_at")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return (data ?? []).map(r => ({ src: r.image_url, category: r.category }));
+    },
+  });
+
+  const all = [...(uploads.data ?? []), ...GALLERY];
+  const items = cat === "All" ? all : all.filter(g => g.category === cat);
 
   return (
     <>
