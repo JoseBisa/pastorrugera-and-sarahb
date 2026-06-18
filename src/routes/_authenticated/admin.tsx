@@ -219,6 +219,7 @@ function AdminPage() {
 
       {tab === "contributions" && <AdminPaymentMethods />}
       {tab === "images" && <AdminLocationImages />}
+      {tab === "gallery" && <AdminGallery />}
     </main>
   );
 }
