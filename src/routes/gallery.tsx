@@ -80,7 +80,7 @@ function Gallery() {
 }
 
 function Lightbox({ items, index, onClose, setIndex }: {
-  items: typeof GALLERY; index: number; onClose: () => void; setIndex: (i: number) => void;
+  items: { src: string; category: string }[]; index: number; onClose: () => void; setIndex: (i: number) => void;
 }) {
   const prev = () => setIndex((index - 1 + items.length) % items.length);
   const next = () => setIndex((index + 1) % items.length);
