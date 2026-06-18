@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import { Users, Heart, MessageSquare, Calendar, LogOut, Download, Trash2, Eye, EyeOff } from "lucide-react";
 import { AdminPaymentMethods } from "@/components/admin/AdminPaymentMethods";
 import { AdminLocationImages } from "@/components/admin/AdminLocationImages";
+import { AdminGallery } from "@/components/admin/AdminGallery";
 
 export const Route = createFileRoute("/_authenticated/admin")({
   component: AdminPage,
@@ -28,7 +29,7 @@ function AdminPage() {
   const delGuest = useServerFn(adminDeleteGuestbook);
   const delRsvp = useServerFn(adminDeleteRsvp);
 
-  const [tab, setTab] = useState<"overview" | "rsvps" | "guestbook" | "contributions" | "images">("overview");
+  const [tab, setTab] = useState<"overview" | "rsvps" | "guestbook" | "contributions" | "images" | "gallery">("overview");
   const [bootstrapped, setBootstrapped] = useState(false);
 
   // Bootstrap admin claim on first visit
@@ -119,7 +120,7 @@ function AdminPage() {
       </header>
 
       <nav className="flex gap-1 border-b border-border mb-8">
-        {(["overview", "rsvps", "guestbook", "contributions", "images"] as const).map(t => (
+        {(["overview", "rsvps", "guestbook", "contributions", "images", "gallery"] as const).map(t => (
           <button key={t}
             onClick={() => setTab(t)}
             className={`px-5 py-3 text-[11px] uppercase tracking-luxe border-b-2 -mb-px transition-colors ${
@@ -218,6 +219,7 @@ function AdminPage() {
 
       {tab === "contributions" && <AdminPaymentMethods />}
       {tab === "images" && <AdminLocationImages />}
+      {tab === "gallery" && <AdminGallery />}
     </main>
   );
 }
