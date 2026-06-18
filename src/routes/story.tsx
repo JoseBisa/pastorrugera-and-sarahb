@@ -49,8 +49,8 @@ function Milestone({ m, index }: { m: typeof STORY[number]; index: number }) {
           className="w-full aspect-[4/5] object-cover shadow-luxe" />
       </div>
       <Reveal>
-        <p className="text-[10px] uppercase tracking-luxe text-accent">{m.year}</p>
-        <h2 className="mt-3 font-serif text-4xl sm:text-5xl">{m.title}</h2>
+        <h2 className="font-serif text-4xl sm:text-5xl">{m.title}</h2>
+
         <div className="gold-rule my-6" />
         <p className="font-display text-lg text-foreground/80 leading-relaxed">{m.text}</p>
       </Reveal>
