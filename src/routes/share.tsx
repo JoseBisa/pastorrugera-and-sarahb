@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { Download } from "lucide-react";
 
-const WEDDING_URL = "https://pastorrugera-and-sarah.lovable.app";
+const WEDDING_URL = "https://pastorrugera-and-sarahb.lovable.app";
 
 export const Route = createFileRoute("/share")({
   head: () => ({
