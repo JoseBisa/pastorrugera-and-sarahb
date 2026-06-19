@@ -18,7 +18,7 @@ export const Route = createFileRoute("/guestbook")({
 
 function Guestbook() {
   const qc = useQueryClient();
-  const [form, setForm] = useState({ name: "", location: "", message: "" });
+  const [form, setForm] = useState({ name: "", location: "", relation: "", message: "" });
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
   const pageSize = 6;
@@ -38,13 +38,14 @@ function Guestbook() {
       const { error } = await supabase.from("guestbook").insert({
         name: form.name.trim().slice(0, 100),
         location: form.location.trim().slice(0, 100) || null,
+        relation: form.relation.trim().slice(0, 120) || null,
         message: form.message.trim().slice(0, 800),
       });
       if (error) throw error;
     },
     onSuccess: () => {
       toast.success("Thank you for your beautiful message");
-      setForm({ name: "", location: "", message: "" });
+      setForm({ name: "", location: "", relation: "", message: "" });
       qc.invalidateQueries({ queryKey: ["guestbook"] });
     },
     onError: (e: Error) => toast.error(e.message),
@@ -75,6 +76,7 @@ function Guestbook() {
           <form onSubmit={onSubmit} className="border border-border bg-card p-7 sm:p-10 space-y-5">
             <Field label="Your Name" value={form.name} onChange={v => setForm({ ...form, name: v })} required />
             <Field label="City / Country" value={form.location} onChange={v => setForm({ ...form, location: v })} />
+            <Field label="How do you know the couple?" value={form.relation} onChange={v => setForm({ ...form, relation: v })} placeholder="e.g. Friend of the bride, Family of the groom" />
             <div>
               <label className="block text-[10px] uppercase tracking-luxe text-muted-foreground mb-2">Message</label>
               <textarea required rows={5} maxLength={800} value={form.message}
@@ -108,7 +110,11 @@ function Guestbook() {
               <p className="font-display italic text-foreground/85 leading-relaxed">"{e.message}"</p>
               <div className="gold-rule my-4" />
               <p className="font-serif text-lg">{e.name}</p>
-              {e.location && <p className="text-[10px] uppercase tracking-luxe text-muted-foreground">{e.location}</p>}
+              {(e.location || e.relation) && (
+                <p className="text-[10px] uppercase tracking-luxe text-muted-foreground">
+                  {[e.location, e.relation].filter(Boolean).join(" · ")}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
@@ -128,11 +134,11 @@ function Guestbook() {
   );
 }
 
-function Field({ label, value, onChange, type = "text", required }: { label: string; value: string; onChange: (v: string) => void; type?: string; required?: boolean }) {
+function Field({ label, value, onChange, type = "text", required, placeholder }: { label: string; value: string; onChange: (v: string) => void; type?: string; required?: boolean; placeholder?: string }) {
   return (
     <div>
       <label className="block text-[10px] uppercase tracking-luxe text-muted-foreground mb-2">{label}{required && " *"}</label>
-      <input type={type} required={required} value={value} onChange={e => onChange(e.target.value)} maxLength={200}
+      <input type={type} required={required} value={value} onChange={e => onChange(e.target.value)} maxLength={200} placeholder={placeholder}
         className="w-full bg-background border border-input px-4 py-3 text-sm focus:border-accent outline-none transition-colors" />
     </div>
   );
