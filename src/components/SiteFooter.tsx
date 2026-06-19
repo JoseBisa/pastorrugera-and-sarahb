@@ -18,6 +18,8 @@ export function SiteFooter() {
             <a href="tel:+255710749380" className="hover:text-accent transition-colors normal-case tracking-normal">+255 71 074 9380</a>
             <span className="hidden sm:inline opacity-50">·</span>
             <a href="mailto:joebisanda@gmail.com" className="hover:text-accent transition-colors normal-case tracking-normal">joebisanda@gmail.com</a>
+            <span className="hidden sm:inline opacity-50">·</span>
+            <a href="/auth" className="hover:text-accent transition-colors">Admin</a>
           </p>
         </div>
       </div>

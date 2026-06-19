@@ -82,6 +82,7 @@ export type Database = {
           location: string | null
           message: string
           name: string
+          relation: string | null
         }
         Insert: {
           approved?: boolean
@@ -90,6 +91,7 @@ export type Database = {
           location?: string | null
           message: string
           name: string
+          relation?: string | null
         }
         Update: {
           approved?: boolean
@@ -98,6 +100,7 @@ export type Database = {
           location?: string | null
           message?: string
           name?: string
+          relation?: string | null
         }
         Relationships: []
       }

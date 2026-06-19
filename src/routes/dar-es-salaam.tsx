@@ -19,8 +19,7 @@ export const Route = createFileRoute("/dar-es-salaam")({
 
 const TRANSPORT = [
   { name: "Bolt", note: "Most reliable ride-hail app in Dar. Download before you arrive; pay cash or in-app." },
-  { name: "Uber", note: "Available across the city. Coverage is best in Masaki, Oysterbay and the city centre." },
-  { name: "Little Cab", note: "Pan-East-African ride app, a solid backup when Bolt/Uber are busy." },
+  { name: "Little Cab", note: "Pan-East-African ride app, a solid backup when Bolt is busy." },
   { name: "Faras", note: "Local ride-hail app, often cheaper for short hops within the city." },
   { name: "Hotel taxis", note: "Pre-arrange airport pickups through your hotel — fixed price, English-speaking drivers." },
   { name: "Bajaj / Tuk-tuks", note: "Fine for short distances. Always agree the fare before getting in." },
@@ -83,7 +82,7 @@ function DarGuide() {
         <ul className="space-y-4 text-sm leading-relaxed">
           {[
             "Dar es Salaam is generally welcoming and safe, especially in tourist and hotel areas like Masaki, Oysterbay, and the city centre.",
-            "Use Bolt, Uber, Faras, or hotel taxis after dark — avoid walking with valuables at night.",
+            "Use Bolt, Faras, Little Cab, or hotel taxis after dark — avoid walking with valuables at night.",
             "Carry a copy of your passport; leave the original in your hotel safe.",
             "Tap water isn't recommended — drink bottled or filtered water (provided in all hotels).",
             "Tanzania uses Type D and G plugs at 230V — bring an adapter.",
