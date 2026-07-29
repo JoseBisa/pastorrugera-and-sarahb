@@ -60,12 +60,15 @@ function Home() {
             <div className="gold-rule mx-auto mt-8" />
             <p className="mt-5 text-[11px] uppercase tracking-luxe">{WEDDING.dateLabel} · {WEDDING.location}</p>
             <p className="mt-3 font-display italic text-lg sm:text-xl text-white/90">{WEDDING.tagline}</p>
-            <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <Link to="/rsvp" className="px-7 py-3 bg-accent text-accent-foreground text-[10px] uppercase tracking-luxe hover:bg-gold transition-colors">
                 RSVP
               </Link>
               <Link to="/story" className="px-7 py-3 border border-white/60 text-[10px] uppercase tracking-luxe hover:bg-white/10 transition-colors">
                 Our Story
+              </Link>
+              <Link to="/gallery" className="px-7 py-3 border border-white/60 text-[10px] uppercase tracking-luxe hover:bg-white/10 transition-colors">
+                Gallery
               </Link>
             </div>
             <ChevronDown className="size-5 mx-auto mt-10 animate-shimmer" />
