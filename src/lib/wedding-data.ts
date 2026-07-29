@@ -89,12 +89,12 @@ export const GALLERY = [
 
 export const EVENTS = [
   {
-    title: "Church Ceremony",
-    time: "10:00 AM",
-    venue: "Masaki English SDA Church",
-    address: "Masaki, Dar es Salaam",
-    map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
-    desc: "An elegant church ceremony celebrating the union of Pastor Rugera and Sarah B.",
+    title: "Wedding Ceremony",
+    time: "11:00 AM",
+    venue: "Whitesands Hotel",
+    address: "Whitesands Hotel, Dar es Salaam",
+    map: "https://www.google.com/maps/search/?api=1&query=Whitesands+Hotel+Dar+es+Salaam",
+    desc: "An elegant ceremony celebrating the union of Pastor Rugera and Sarah B.",
     image: IMG.ceremony,
   },
   {
