@@ -24,6 +24,7 @@ export type Database = {
           sort_order: number
           storage_path: string | null
           updated_at: string
+          uploader_name: string | null
         }
         Insert: {
           caption?: string | null
@@ -34,6 +35,7 @@ export type Database = {
           sort_order?: number
           storage_path?: string | null
           updated_at?: string
+          uploader_name?: string | null
         }
         Update: {
           caption?: string | null
@@ -44,6 +46,7 @@ export type Database = {
           sort_order?: number
           storage_path?: string | null
           updated_at?: string
+          uploader_name?: string | null
         }
         Relationships: []
       }
