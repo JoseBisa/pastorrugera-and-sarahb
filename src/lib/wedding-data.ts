@@ -89,12 +89,12 @@ export const GALLERY = [
 
 export const EVENTS = [
   {
-    title: "Wedding Ceremony",
+    title: "Church Ceremony",
     time: "11:00 AM",
-    venue: "Whitesands Hotel",
-    address: "Whitesands Hotel, Dar es Salaam",
-    map: "https://www.google.com/maps/search/?api=1&query=Whitesands+Hotel+Dar+es+Salaam",
-    desc: "An elegant ceremony celebrating the union of Pastor Rugera and Sarah B.",
+    venue: "Masaki English SDA Church",
+    address: "Masaki, Dar es Salaam",
+    map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
+    desc: "An elegant church ceremony celebrating the union of Pastor Rugera and Sarah B.",
     image: IMG.ceremony,
   },
   {
@@ -104,14 +104,14 @@ export const EVENTS = [
     address: "Whitesands Hotel, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=Whitesands+Hotel+Dar+es+Salaam",
     desc: "Light refreshments and social gathering after the ceremony.",
-    image: IMG.ceremony,
+    image: IMG.venue,
   },
   {
     title: "Reception",
     time: "4:00 PM",
-    venue: "JC Hall Bahari Beach",
-    address: "Bahari Beach, Dar es Salaam",
-    map: "https://www.google.com/maps/search/?api=1&query=JC+Hall+Bahari+Beach+Dar+es+Salaam",
+    venue: "Whitesands Hotel",
+    address: "Whitesands Hotel, Dar es Salaam",
+    map: "https://www.google.com/maps/search/?api=1&query=Whitesands+Hotel+Dar+es+Salaam",
     desc: "Reception, dinner, speeches, dancing, and celebration.",
     image: IMG.venue,
   },
