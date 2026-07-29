@@ -29,7 +29,7 @@ export const IMG = {
 export const WEDDING = {
   bride: "Sarah B",
   groom: "Pastor Rugera",
-  dateISO: "2026-12-20T10:00:00+03:00",
+  dateISO: "2026-12-20T11:00:00+03:00",
   dateLabel: "20 December 2026",
   tagline: "Forever Begins Here",
   location: "Dar es Salaam, Tanzania",
@@ -100,9 +100,9 @@ export const EVENTS = [
   {
     title: "Cocktails",
     time: "1:00 PM",
-    venue: "Church Venue",
-    address: "Masaki, Dar es Salaam",
-    map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
+    venue: "Whitesands Hotel",
+    address: "Whitesands Hotel, Dar es Salaam",
+    map: "https://www.google.com/maps/search/?api=1&query=Whitesands+Hotel+Dar+es+Salaam",
     desc: "Light refreshments and social gathering after the ceremony.",
     image: IMG.ceremony,
   },
