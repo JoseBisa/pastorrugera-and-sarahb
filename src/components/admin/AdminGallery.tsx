@@ -8,7 +8,7 @@ import { GALLERY_CATEGORIES } from "@/lib/gallery";
 const BUCKET = "gallery-images";
 const SIGNED_EXPIRY = 60 * 60 * 24 * 365 * 10; // 10 years
 
-const CATEGORIES = [...GALLERY_CATEGORIES];
+const CATEGORIES: string[] = [...GALLERY_CATEGORIES];
 
 export function AdminGallery() {
   const qc = useQueryClient();

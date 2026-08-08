@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Upload, X, ImagePlus } from "lucide-react";
-import { ACCEPTED_IMAGE_TYPES, GALLERY_BUCKET, SIGNED_EXPIRY, extFromName } from "@/lib/gallery";
+import { ACCEPTED_IMAGE_TYPES, GALLERY_BUCKET, GALLERY_CATEGORIES, SIGNED_EXPIRY, extFromName } from "@/lib/gallery";
 
 type Staged = { file: File; preview: string; caption: string };
 
@@ -14,6 +14,7 @@ export function GalleryUploader() {
   const [dragging, setDragging] = useState(false);
   const [staged, setStaged] = useState<Staged[]>([]);
   const [name, setName] = useState("");
+  const [category, setCategory] = useState<string>(GALLERY_CATEGORIES[0]);
   const [progress, setProgress] = useState(0);
 
   function addFiles(files: FileList | File[]) {
@@ -37,7 +38,7 @@ export function GalleryUploader() {
         const { error } = await supabase.from("gallery_images").insert({
           image_url: signed.data.signedUrl,
           storage_path: path,
-          category: "Guest Uploads",
+          category,
           caption: item.caption.trim().slice(0, 500) || null,
           uploader_name: name.trim().slice(0, 80) || null,
         });
@@ -117,13 +118,28 @@ export function GalleryUploader() {
             ))}
           </div>
 
-          <input
-            value={name}
-            onChange={e => setName(e.target.value)}
-            maxLength={80}
-            placeholder="Your name (optional)"
-            className="w-full rounded-xl border border-border bg-background px-3 py-2 text-sm"
-          />
+          <div className="grid gap-3 sm:grid-cols-2">
+            <label className="flex flex-col gap-1">
+              <span className="text-[10px] uppercase tracking-luxe text-muted-foreground">Category</span>
+              <select
+                value={category}
+                onChange={e => setCategory(e.target.value)}
+                className="rounded-xl border border-border bg-background px-3 py-2 text-sm"
+              >
+                {GALLERY_CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </label>
+            <label className="flex flex-col gap-1">
+              <span className="text-[10px] uppercase tracking-luxe text-muted-foreground">Your name (optional)</span>
+              <input
+                value={name}
+                onChange={e => setName(e.target.value)}
+                maxLength={80}
+                placeholder="Your name"
+                className="rounded-xl border border-border bg-background px-3 py-2 text-sm"
+              />
+            </label>
+          </div>
 
           {upload.isPending && (
             <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
