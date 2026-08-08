@@ -69,9 +69,9 @@ function Gallery() {
           <h1 className="mt-6 font-serif text-4xl sm:text-6xl">Our Shared Wedding Memories</h1>
           <div className="gold-rule mx-auto my-6" />
           <p className="max-w-2xl mx-auto font-display italic text-lg text-foreground/75 leading-relaxed">
-            Upload your favourite moments, leave a sweet message, and celebrate together with everyone who
-            shared our special day.
+            Browse our favourite moments and download the memories we shared together on our special day.
           </p>
+
         </Reveal>
       </section>
 
