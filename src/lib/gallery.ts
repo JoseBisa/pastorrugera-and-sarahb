@@ -10,6 +10,7 @@ export const GALLERY_CATEGORIES = [
   "Adventures",
   "Family Introduction",
   "Engagement and Mahari",
+  "Proposal",
 ] as const;
 
 export type GalleryItem = {
