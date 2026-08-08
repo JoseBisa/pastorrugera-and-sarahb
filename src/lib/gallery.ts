@@ -6,6 +6,12 @@ export const ACCEPTED_IMAGE_TYPES =
 
 export const DEFAULT_CAPTION = "Shared from our wedding memories 💍";
 
+export const GALLERY_CATEGORIES = [
+  "Adventures",
+  "Family Introduction",
+  "Engagement and Mahari",
+] as const;
+
 export type GalleryItem = {
   id: string;
   src: string;
