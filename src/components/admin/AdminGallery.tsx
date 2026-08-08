@@ -3,11 +3,12 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Upload, Trash2 } from "lucide-react";
+import { GALLERY_CATEGORIES } from "@/lib/gallery";
 
 const BUCKET = "gallery-images";
 const SIGNED_EXPIRY = 60 * 60 * 24 * 365 * 10; // 10 years
 
-const CATEGORIES = ["Proposal", "Engagement", "Dates & Adventures", "Family Moments", "Wedding Preparations"];
+const CATEGORIES: string[] = [...GALLERY_CATEGORIES];
 
 export function AdminGallery() {
   const qc = useQueryClient();

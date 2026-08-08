@@ -8,7 +8,7 @@ import { GALLERY } from "@/lib/wedding-data";
 import { supabase } from "@/integrations/supabase/client";
 import { GalleryUploader } from "@/components/gallery/GalleryUploader";
 import { GalleryCarousel } from "@/components/gallery/GalleryCarousel";
-import { DEFAULT_CAPTION, downloadImage, type GalleryItem } from "@/lib/gallery";
+import { DEFAULT_CAPTION, GALLERY_CATEGORIES, downloadImage, type GalleryItem } from "@/lib/gallery";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
 });
 
-const CATEGORIES = ["All", "Guest Uploads", "Proposal", "Engagement", "Dates & Adventures", "Family Moments", "Wedding Preparations"];
+const CATEGORIES = ["All", ...GALLERY_CATEGORIES];
 
 function Gallery() {
   const [cat, setCat] = useState("All");
@@ -44,7 +44,7 @@ function Gallery() {
         caption: r.caption,
         uploaderName: r.uploader_name,
         uploadedAt: r.created_at,
-        category: r.category ?? "Guest Uploads",
+        category: r.category ?? "Adventures",
       }));
     },
   });
