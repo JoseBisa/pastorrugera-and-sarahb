@@ -6,7 +6,7 @@ import { X, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { GALLERY } from "@/lib/wedding-data";
 import { supabase } from "@/integrations/supabase/client";
-import { GalleryUploader } from "@/components/gallery/GalleryUploader";
+
 import { GalleryCarousel } from "@/components/gallery/GalleryCarousel";
 import { DEFAULT_CAPTION, GALLERY_CATEGORIES, downloadImage, type GalleryItem } from "@/lib/gallery";
 
@@ -14,9 +14,10 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Shared Wedding Gallery — Pastor Rugera & Sarah B" },
-      { name: "description", content: "Upload your favourite moments and browse the shared wedding memories of Pastor Rugera and Sarah B." },
+      { name: "description", content: "Browse and download the shared wedding memories of Pastor Rugera and Sarah B." },
       { property: "og:title", content: "Our Shared Wedding Memories" },
-      { property: "og:description", content: "Upload your favourite moments, leave a sweet message, and celebrate together." },
+      { property: "og:description", content: "Browse the moments we shared and download your favourites." },
+
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -69,15 +70,12 @@ function Gallery() {
           <h1 className="mt-6 font-serif text-4xl sm:text-6xl">Our Shared Wedding Memories</h1>
           <div className="gold-rule mx-auto my-6" />
           <p className="max-w-2xl mx-auto font-display italic text-lg text-foreground/75 leading-relaxed">
-            Upload your favourite moments, leave a sweet message, and celebrate together with everyone who
-            shared our special day.
+            Browse our favourite moments and download the memories we shared together on our special day.
           </p>
+
         </Reveal>
       </section>
 
-      <section className="pb-12">
-        <GalleryUploader />
-      </section>
 
       {all.length > 0 && (
         <section className="px-3 sm:px-6 pb-14">
