@@ -14,9 +14,10 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Shared Wedding Gallery — Pastor Rugera & Sarah B" },
-      { name: "description", content: "Upload your favourite moments and browse the shared wedding memories of Pastor Rugera and Sarah B." },
+      { name: "description", content: "Browse and download the shared wedding memories of Pastor Rugera and Sarah B." },
       { property: "og:title", content: "Our Shared Wedding Memories" },
-      { property: "og:description", content: "Upload your favourite moments, leave a sweet message, and celebrate together." },
+      { property: "og:description", content: "Browse the moments we shared and download your favourites." },
+
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
