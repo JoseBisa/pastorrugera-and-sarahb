@@ -6,7 +6,7 @@ import { X, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { GALLERY } from "@/lib/wedding-data";
 import { supabase } from "@/integrations/supabase/client";
-import { GalleryUploader } from "@/components/gallery/GalleryUploader";
+
 import { GalleryCarousel } from "@/components/gallery/GalleryCarousel";
 import { DEFAULT_CAPTION, GALLERY_CATEGORIES, downloadImage, type GalleryItem } from "@/lib/gallery";
 
@@ -75,9 +75,6 @@ function Gallery() {
         </Reveal>
       </section>
 
-      <section className="pb-12">
-        <GalleryUploader />
-      </section>
 
       {all.length > 0 && (
         <section className="px-3 sm:px-6 pb-14">
