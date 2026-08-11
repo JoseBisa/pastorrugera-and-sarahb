@@ -29,7 +29,7 @@ export const IMG = {
 export const WEDDING = {
   bride: "Sarah B",
   groom: "Pastor Rugera",
-  dateISO: "2026-12-20T11:00:00+03:00",
+  dateISO: "2026-12-20T10:00:00+03:00",
   dateLabel: "20 December 2026",
   tagline: "Forever Begins Here",
   location: "Dar es Salaam, Tanzania",
@@ -79,7 +79,7 @@ export const GALLERY: { src: string; category: string }[] = [];
 export const EVENTS = [
   {
     title: "Church Ceremony",
-    time: "11:00 AM",
+    time: "10:00 AM",
     venue: "Masaki English SDA Church",
     address: "Masaki, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=Masaki+English+SDA+Church+Dar+es+Salaam",
