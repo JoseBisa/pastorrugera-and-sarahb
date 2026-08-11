@@ -65,13 +65,8 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
                 {" · "}
                 {index + 1} / {count}
               </p>
-              <button
-                onClick={() => downloadImage(current.src, index)}
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/90 text-charcoal text-[10px] uppercase tracking-luxe hover:bg-white transition-colors"
-              >
-                <Download className="size-3.5" /> Download
-              </button>
             </div>
+
           </div>
         </div>
 
