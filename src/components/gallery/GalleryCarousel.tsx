@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Download } from "lucide-react";
-import { DEFAULT_CAPTION, downloadImage, type GalleryItem } from "@/lib/gallery";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { DEFAULT_CAPTION, type GalleryItem } from "@/lib/gallery";
 
 export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
   const [index, setIndex] = useState(0);
@@ -65,13 +65,8 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
                 {" · "}
                 {index + 1} / {count}
               </p>
-              <button
-                onClick={() => downloadImage(current.src, index)}
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/90 text-charcoal text-[10px] uppercase tracking-luxe hover:bg-white transition-colors"
-              >
-                <Download className="size-3.5" /> Download
-              </button>
             </div>
+
           </div>
         </div>
 

@@ -2,21 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { GALLERY } from "@/lib/wedding-data";
 import { supabase } from "@/integrations/supabase/client";
 
 import { GalleryCarousel } from "@/components/gallery/GalleryCarousel";
-import { DEFAULT_CAPTION, GALLERY_CATEGORIES, downloadImage, type GalleryItem } from "@/lib/gallery";
+import { DEFAULT_CAPTION, GALLERY_CATEGORIES, type GalleryItem } from "@/lib/gallery";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Shared Wedding Gallery — Pastor Rugera & Sarah B" },
-      { name: "description", content: "Browse and download the shared wedding memories of Pastor Rugera and Sarah B." },
+      { name: "description", content: "Browse the shared wedding memories of Pastor Rugera and Sarah B." },
       { property: "og:title", content: "Our Shared Wedding Memories" },
-      { property: "og:description", content: "Browse the moments we shared and download your favourites." },
+      { property: "og:description", content: "Browse the moments we shared." },
 
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -70,7 +70,7 @@ function Gallery() {
           <h1 className="mt-6 font-serif text-4xl sm:text-6xl">Our Shared Wedding Memories</h1>
           <div className="gold-rule mx-auto my-6" />
           <p className="max-w-2xl mx-auto font-display italic text-lg text-foreground/75 leading-relaxed">
-            Browse our favourite moments and download the memories we shared together on our special day.
+            Photos from our celebration will be shared here soon.
           </p>
 
         </Reveal>
@@ -113,10 +113,6 @@ function Gallery() {
                   <p className="mt-1.5 text-[10px] uppercase tracking-luxe text-muted-foreground">— {g.uploaderName}</p>
                 )}
               </div>
-              <button onClick={() => downloadImage(g.src, i)} aria-label="Download photo"
-                className="shrink-0 rounded-full border border-border p-2 text-muted-foreground hover:text-accent hover:border-accent transition-colors">
-                <Download className="size-3.5" />
-              </button>
             </figcaption>
           </motion.figure>
         ))}
@@ -160,10 +156,6 @@ function Lightbox({ items, index, onClose, setIndex }: {
           {item.uploadedAt ? new Date(item.uploadedAt).toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" }) : item.category}
           {" · "}{index + 1} / {items.length}
         </p>
-        <button onClick={() => downloadImage(item.src, index)}
-          className="mt-4 inline-flex items-center gap-2 rounded-full px-6 py-2.5 bg-white text-charcoal text-[10px] uppercase tracking-luxe hover:opacity-90 transition-opacity">
-          <Download className="size-3.5" /> Download
-        </button>
       </div>
     </motion.div>
   );
