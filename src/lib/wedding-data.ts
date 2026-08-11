@@ -74,18 +74,7 @@ export const STORY = [
   },
 ];
 
-export const GALLERY = [
-  { src: IMG.resort, category: "Adventures" },
-  { src: IMG.street, category: "Engagement and Mahari" },
-  { src: IMG.couple1, category: "Engagement and Mahari" },
-  { src: IMG.couple2, category: "Adventures" },
-  { src: IMG.couple3, category: "Family Introduction" },
-  { src: IMG.couple4, category: "Adventures" },
-  { src: IMG.couple5, category: "Adventures" },
-  { src: IMG.ring, category: "Engagement and Mahari" },
-  { src: IMG.family, category: "Family Introduction" },
-  { src: IMG.hero, category: "Engagement and Mahari" },
-];
+export const GALLERY: { src: string; category: string }[] = [];
 
 export const EVENTS = [
   {
