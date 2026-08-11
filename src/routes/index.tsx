@@ -112,7 +112,7 @@ function Home() {
         </Reveal>
         <div className="grid sm:grid-cols-2 gap-5">
           <FactCard icon={<Sparkles className="size-4" />} label="The Date" value="20 December 2026" />
-          <FactCard icon={<MapPin className="size-4" />} label="Church Ceremony" value="Masaki English SDA Church · 11:00 AM" />
+          <FactCard icon={<MapPin className="size-4" />} label="Church Ceremony" value="Masaki English SDA Church · 10:00 AM" />
           <FactCard icon={<MapPin className="size-4" />} label="Reception" value="Whitesands Hotel" />
           <FactCard icon={<Clock className="size-4" />} label="Dress Code" value="Black Tie & Elegant Dress" />
         </div>
