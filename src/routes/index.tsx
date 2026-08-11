@@ -26,7 +26,7 @@ function Home() {
         <motion.img
           src={IMG.hero}
           alt="Pastor Rugera and Sarah B"
-          className="absolute inset-0 size-full object-cover object-[50%_15%] sm:object-center"
+          className="absolute inset-0 size-full object-cover object-[50%_10%] sm:object-[50%_10%]"
           initial={{ scale: 1.15 }}
           animate={{ scale: 1 }}
           transition={{ duration: 6, ease: [0.22, 1, 0.36, 1] }}
