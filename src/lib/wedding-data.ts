@@ -99,7 +99,7 @@ export const EVENTS = [
     address: "White Sands Hotel, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=White+Sands+Hotel+Dar+es+Salaam",
     desc: "An elegant ceremony celebrating the union of Pastor Rugera and Sarah B.",
-    image: IMG.ceremony,
+    image: IMG.ceremonyVenue,
   },
   {
     title: "Cocktails",
@@ -110,7 +110,7 @@ export const EVENTS = [
     address: "White Sands Hotel, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=White+Sands+Hotel+Dar+es+Salaam",
     desc: "Light refreshments and a social gathering after the ceremony.",
-    image: IMG.venue,
+    image: IMG.cocktailVenue,
   },
   {
     title: "Wedding Reception",
