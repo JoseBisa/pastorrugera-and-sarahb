@@ -10,6 +10,12 @@ import ring from "@/assets/IMG-20260616-WA0001.jpg.asset.json";
 import family from "@/assets/IMG-20260616-WA0002.jpg.asset.json";
 import venue from "@/assets/IMG-20260616-WA0000.jpg.asset.json";
 import ceremony from "@/assets/IMG-20260616-WA0003.jpg.asset.json";
+import ceremonyVenue from "@/assets/IMG-20260812-WA0015.jpg.asset.json";
+import cocktailVenue from "@/assets/IMG-20260812-WA0009_1.jpg.asset.json";
+import dressCode from "@/assets/IMG-20260812-WA0011_1.jpg.asset.json";
+import transport from "@/assets/IMG-20260812-WA0014.jpg.asset.json";
+import safety from "@/assets/IMG-20260810-WA0017_1.jpg.asset.json";
+import thingsToDo from "@/assets/IMG-20260809-WA0005.jpg.asset.json";
 
 export const IMG = {
   hero: hero.url,
@@ -24,7 +30,14 @@ export const IMG = {
   family: family.url,
   venue: venue.url,
   ceremony: ceremony.url,
+  ceremonyVenue: ceremonyVenue.url,
+  cocktailVenue: cocktailVenue.url,
+  dressCode: dressCode.url,
+  transport: transport.url,
+  safety: safety.url,
+  thingsToDo: thingsToDo.url,
 };
+
 
 export const WEDDING = {
   bride: "Sarah B",
