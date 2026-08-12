@@ -129,12 +129,13 @@ function Home() {
             <Reveal key={e.title} delay={i * 0.1}>
               <div className="grid grid-cols-[80px_1fr] gap-6 items-start">
                 <div className="text-right">
-                  <p className="font-serif text-2xl text-accent">{e.time.split(" ")[0]}</p>
-                  <p className="text-[10px] uppercase tracking-luxe text-muted-foreground">{e.time.split(" ")[1]}</p>
+                  <p className="font-serif text-2xl text-accent">{e.timeStart}</p>
+                  <p className="text-[10px] uppercase tracking-luxe text-muted-foreground">{e.timeMeridiem}</p>
                 </div>
                 <div className="border-l border-accent/40 pl-6">
                   <p className="text-[10px] uppercase tracking-luxe text-accent">{e.title}</p>
                   <p className="mt-1 font-serif text-2xl">{e.venue}</p>
+                  <p className="mt-1 text-[11px] uppercase tracking-luxe text-muted-foreground">{e.time}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{e.desc}</p>
                 </div>
               </div>
