@@ -100,8 +100,26 @@ function DarGuide() {
         <p className="text-muted-foreground leading-relaxed mb-8">
           From beachfront seafood to Swahili street food and rooftop cocktails — Dar has something for every mood.
         </p>
-        <CardGrid sectionKey="eats" items={EATS} imgs={imgs} />
+        <div className="grid lg:grid-cols-2 gap-10">
+          <div>
+            <div className="inline-flex items-center gap-3 text-accent">
+              <Soup className="size-4" />
+              <SectionLabel>Local Cuisine</SectionLabel>
+            </div>
+            <div className="gold-rule my-5" />
+            <CardGrid sectionKey="eats" items={LOCAL_EATS} imgs={imgs} cols={1} />
+          </div>
+          <div>
+            <div className="inline-flex items-center gap-3 text-accent">
+              <ChefHat className="size-4" />
+              <SectionLabel>International Cuisine</SectionLabel>
+            </div>
+            <div className="gold-rule my-5" />
+            <CardGrid sectionKey="eats" items={INTERNATIONAL_EATS} imgs={imgs} cols={1} />
+          </div>
+        </div>
       </Section>
+
 
       <Section icon={<Sparkles className="size-5" />} label="Explore" title="Things to Do in Dar" image={IMG.couple3}>
         <CardGrid sectionKey="do" items={DAR_DO} imgs={imgs} />
