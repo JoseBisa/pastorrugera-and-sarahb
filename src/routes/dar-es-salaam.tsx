@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { IMG } from "@/lib/wedding-data";
-import { HOTELS, EATS, DAR_DO, ZANZIBAR, locationKey, type DarItem } from "@/lib/dar-data";
+import { HOTELS, LOCAL_EATS, INTERNATIONAL_EATS, DAR_DO, ZANZIBAR, locationKey, type DarItem } from "@/lib/dar-data";
 import { supabase } from "@/integrations/supabase/client";
 import darSkyline from "@/assets/dar-skyline.jpg.asset.json";
-import { MapPin, Hotel, Car, Shield, Utensils, Sparkles, Palmtree } from "lucide-react";
+import { MapPin, Hotel, Car, Shield, Utensils, Sparkles, Palmtree, Soup, ChefHat } from "lucide-react";
 
 export const Route = createFileRoute("/dar-es-salaam")({
   head: () => ({
@@ -59,7 +59,7 @@ function DarGuide() {
 
       <Section icon={<Hotel className="size-5" />} label="Where to Stay" title="Accommodation" image={IMG.resort}>
         <p className="text-muted-foreground leading-relaxed mb-8">
-          Most of our guests will stay between the city centre and the Masaki / Oysterbay peninsula — both are convenient for the ceremony and offer a range of options. For guests who want to wake up by the ocean near the reception, Bahari Beach is a great choice.
+          A selection of hotels and beach resorts we recommend for our guests. Those along the northern coast — Bahari Beach, Jangwani and Mbezi — are closest to both White Sands Hotel and JC Hall Bahari Beach.
         </p>
         <CardGrid sectionKey="hotels" items={HOTELS} imgs={imgs} />
       </Section>
@@ -81,7 +81,7 @@ function DarGuide() {
       <Section icon={<Shield className="size-5" />} label="Stay Safe" title="Safety & Common Sense" image={IMG.couple2}>
         <ul className="space-y-4 text-sm leading-relaxed">
           {[
-            "Dar es Salaam is generally welcoming and safe, especially in tourist and hotel areas like Masaki, Oysterbay, and the city centre.",
+            "Dar es Salaam is generally welcoming and safe, especially in tourist and hotel areas like Masaki, Oysterbay, Bahari Beach, and the city centre.",
             "Use Bolt, Faras, Little Cab, or hotel taxis after dark — avoid walking with valuables at night.",
             "Carry a copy of your passport; leave the original in your hotel safe.",
             "Tap water isn't recommended — drink bottled or filtered water (provided in all hotels).",
@@ -100,8 +100,26 @@ function DarGuide() {
         <p className="text-muted-foreground leading-relaxed mb-8">
           From beachfront seafood to Swahili street food and rooftop cocktails — Dar has something for every mood.
         </p>
-        <CardGrid sectionKey="eats" items={EATS} imgs={imgs} />
+        <div className="grid lg:grid-cols-2 gap-10">
+          <div>
+            <div className="inline-flex items-center gap-3 text-accent">
+              <Soup className="size-4" />
+              <SectionLabel>Local Cuisine</SectionLabel>
+            </div>
+            <div className="gold-rule my-5" />
+            <CardGrid sectionKey="eats" items={LOCAL_EATS} imgs={imgs} cols={1} />
+          </div>
+          <div>
+            <div className="inline-flex items-center gap-3 text-accent">
+              <ChefHat className="size-4" />
+              <SectionLabel>International Cuisine</SectionLabel>
+            </div>
+            <div className="gold-rule my-5" />
+            <CardGrid sectionKey="eats" items={INTERNATIONAL_EATS} imgs={imgs} cols={1} />
+          </div>
+        </div>
       </Section>
+
 
       <Section icon={<Sparkles className="size-5" />} label="Explore" title="Things to Do in Dar" image={IMG.couple3}>
         <CardGrid sectionKey="do" items={DAR_DO} imgs={imgs} />
@@ -144,9 +162,9 @@ function Section({
   );
 }
 
-function CardGrid({ sectionKey, items, imgs }: { sectionKey: string; items: DarItem[]; imgs: Record<string, string> }) {
+function CardGrid({ sectionKey, items, imgs, cols = 2 }: { sectionKey: string; items: DarItem[]; imgs: Record<string, string>; cols?: 1 | 2 }) {
   return (
-    <div className="grid sm:grid-cols-2 gap-5">
+    <div className={`grid gap-5 ${cols === 2 ? "sm:grid-cols-2" : "grid-cols-1"}`}>
       {items.map((it) => {
         const url = imgs[locationKey(sectionKey, it.name)];
         return (

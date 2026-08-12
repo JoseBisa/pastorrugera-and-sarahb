@@ -8,7 +8,7 @@ export const DEFAULT_CAPTION = "Shared from our wedding memories 💍";
 
 export const GALLERY_CATEGORIES = [
   "Adventures",
-  "Family Introduction",
+  "With Family",
   "Mahari",
   "Proposal",
 ] as const;
