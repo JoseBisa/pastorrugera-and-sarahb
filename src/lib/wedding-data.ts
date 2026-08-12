@@ -10,6 +10,12 @@ import ring from "@/assets/IMG-20260616-WA0001.jpg.asset.json";
 import family from "@/assets/IMG-20260616-WA0002.jpg.asset.json";
 import venue from "@/assets/IMG-20260616-WA0000.jpg.asset.json";
 import ceremony from "@/assets/IMG-20260616-WA0003.jpg.asset.json";
+import ceremonyVenue from "@/assets/IMG-20260812-WA0015.jpg.asset.json";
+import cocktailVenue from "@/assets/IMG-20260812-WA0009_1.jpg.asset.json";
+import dressCode from "@/assets/IMG-20260812-WA0011_1.jpg.asset.json";
+import transport from "@/assets/IMG-20260812-WA0014.jpg.asset.json";
+import safety from "@/assets/IMG-20260810-WA0017_1.jpg.asset.json";
+import thingsToDo from "@/assets/IMG-20260809-WA0005.jpg.asset.json";
 
 export const IMG = {
   hero: hero.url,
@@ -24,7 +30,14 @@ export const IMG = {
   family: family.url,
   venue: venue.url,
   ceremony: ceremony.url,
+  ceremonyVenue: ceremonyVenue.url,
+  cocktailVenue: cocktailVenue.url,
+  dressCode: dressCode.url,
+  transport: transport.url,
+  safety: safety.url,
+  thingsToDo: thingsToDo.url,
 };
+
 
 export const WEDDING = {
   bride: "Sarah B",
@@ -86,7 +99,7 @@ export const EVENTS = [
     address: "White Sands Hotel, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=White+Sands+Hotel+Dar+es+Salaam",
     desc: "An elegant ceremony celebrating the union of Pastor Rugera and Sarah B.",
-    image: IMG.ceremony,
+    image: IMG.ceremonyVenue,
   },
   {
     title: "Cocktails",
@@ -97,7 +110,7 @@ export const EVENTS = [
     address: "White Sands Hotel, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=White+Sands+Hotel+Dar+es+Salaam",
     desc: "Light refreshments and a social gathering after the ceremony.",
-    image: IMG.venue,
+    image: IMG.cocktailVenue,
   },
   {
     title: "Wedding Reception",
@@ -112,17 +125,20 @@ export const EVENTS = [
   },
 ];
 
-export const PARTY = {
-  bride: [
-    { name: "Amani Mushi", role: "Maid of Honor", bio: "Sarah B's sister and lifelong confidante." },
-    { name: "Neema Joseph", role: "Bridesmaid", bio: "University best friend and travel partner." },
-    { name: "Zawadi Kimaro", role: "Bridesmaid", bio: "Cousin, sister at heart, the steady one." },
-    { name: "Halima Said", role: "Bridesmaid", bio: "Childhood friend from Mwanza." },
-  ],
-  groom: [
-    { name: "David Mwakyusa", role: "Best Man", bio: "Ruge's brother and partner in mischief." },
-    { name: "Emmanuel Tindwa", role: "Groomsman", bio: "Best friend since secondary school." },
-    { name: "Joseph Lema", role: "Groomsman", bio: "Cousin and confidant." },
-    { name: "Brian Mtui", role: "Groomsman", bio: "University roommate, brother for life." },
-  ],
-};
+export const PARTY: { role: string; names: string[] }[] = [
+  { role: "Best Man & Best Girl", names: ["Fred", "Roselyne"] },
+  { role: "Matron & Patron", names: ["Lutundwa & Kihoko (Lead)", "Lucy & Moses", "Kelly & Davy"] },
+  { role: "Twins Entrance", names: ["Neza", "Tuishime"] },
+  { role: "Bible Boys", names: ["Mkunzi", "Edrie"] },
+  { role: "Church Manual & Hymn Boys", names: ["Lance", "Ethan"] },
+  { role: "Flower Girls", names: ["Esther", "Shivela"] },
+  { role: "Pillow Girls", names: ["Miriam", "Claudia"] },
+  { role: "Board 1 Kids", names: ["Abigail", "Solomon"] },
+  { role: "Board 2 Kids", names: ["Alex", "Alana"] },
+  { role: "Bridal Siblings", names: ["Joseph & Julie", "Phillip & Clara"] },
+  { role: "Couples Team", names: ["Thabi & Elijah", "Kuda & Florian", "Marygee & Arthur", "Grace & Butholenkosi"] },
+  { role: "Maids", names: ["Debbie", "Julie", "Mugore", "Sarah Chu", "Neema Urassa", "Esther Kiangi", "Dorcas", "Luhle"] },
+  { role: "Grooms", names: ["Ndumiso", "Epaika", "Stephan", "Kayode", "Lusajo", "Leslie", "King", "Joshua"] },
+  { role: "Children of the Couple", names: ["Isabelle & Michael", "Nyari & Kupa"] },
+];
+

@@ -64,7 +64,7 @@ function DarGuide() {
         <CardGrid sectionKey="hotels" items={HOTELS} imgs={imgs} />
       </Section>
 
-      <Section icon={<Car className="size-5" />} label="Getting Around" title="Transport" image={IMG.street} tone="alt">
+      <Section icon={<Car className="size-5" />} label="Getting Around" title="Transport" image={IMG.transport} tone="alt">
         <p className="text-muted-foreground leading-relaxed mb-8">
           Dar es Salaam is easiest by ride-hail apps — install one or two before you fly. Have small Tanzanian Shilling notes for tips and short bajaj rides.
         </p>
@@ -78,7 +78,7 @@ function DarGuide() {
         </div>
       </Section>
 
-      <Section icon={<Shield className="size-5" />} label="Stay Safe" title="Safety & Common Sense" image={IMG.couple2}>
+      <Section icon={<Shield className="size-5" />} label="Stay Safe" title="Safety & Common Sense" image={IMG.safety}>
         <ul className="space-y-4 text-sm leading-relaxed">
           {[
             "Dar es Salaam is generally welcoming and safe, especially in tourist and hotel areas like Masaki, Oysterbay, Bahari Beach, and the city centre.",
@@ -121,7 +121,7 @@ function DarGuide() {
       </Section>
 
 
-      <Section icon={<Sparkles className="size-5" />} label="Explore" title="Things to Do in Dar" image={IMG.couple3}>
+      <Section icon={<Sparkles className="size-5" />} label="Explore" title="Things to Do in Dar" image={IMG.thingsToDo}>
         <CardGrid sectionKey="do" items={DAR_DO} imgs={imgs} />
       </Section>
 

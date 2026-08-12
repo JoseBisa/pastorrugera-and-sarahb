@@ -12,13 +12,7 @@ export const Route = createFileRoute("/party")({
   component: Party,
 });
 
-function firstName(full: string) {
-  return full.split(" ")[0];
-}
-
 function Party() {
-  const members = [...PARTY.bride, ...PARTY.groom];
-
   return (
     <>
       <section className="px-6 py-20 text-center">
@@ -31,19 +25,22 @@ function Party() {
         </Reveal>
       </section>
 
-      <section className="px-6 pb-24 max-w-5xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-10">
-          {members.map((m, i) => (
-            <Reveal key={m.name} delay={i * 0.05}>
-              <div className="text-center">
-                <p className="text-[10px] uppercase tracking-luxe text-accent">{m.role}</p>
-                <p className="mt-3 font-serif text-2xl">{firstName(m.name)}</p>
-                <div className="gold-rule mx-auto mt-4" />
+      <section className="px-6 pb-24 max-w-4xl mx-auto space-y-12">
+        {PARTY.map((g, i) => (
+          <Reveal key={g.role} delay={i * 0.04}>
+            <div className="text-center">
+              <p className="text-[10px] uppercase tracking-luxe text-accent">{g.role}</p>
+              <div className="gold-rule mx-auto my-4" />
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+                {g.names.map((n) => (
+                  <p key={n} className="font-serif text-2xl">{n}</p>
+                ))}
               </div>
-            </Reveal>
-          ))}
-        </div>
+            </div>
+          </Reveal>
+        ))}
       </section>
     </>
   );
 }
+
