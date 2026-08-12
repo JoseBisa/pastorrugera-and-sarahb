@@ -65,8 +65,12 @@ function Details() {
           <p className="mt-6 text-muted-foreground leading-relaxed">
             We invite our guests to dress in their most refined attire. Gentlemen in tuxedos or dark suits; ladies in elegant gowns.
           </p>
+          <div className="mt-10 border border-border overflow-hidden bg-card">
+            <img src={IMG.dressCode} alt="Wedding dress code guide — black tie and elegant attire" className="w-full h-auto" loading="lazy" />
+          </div>
         </Reveal>
       </section>
+
     </>
   );
 }
