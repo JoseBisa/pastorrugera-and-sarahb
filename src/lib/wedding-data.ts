@@ -131,12 +131,12 @@ export const EVENTS = [
     address: "JC Hall, Bahari Beach, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=JC+Hall+Bahari+Beach+Dar+es+Salaam",
     desc: "Reception, dinner, speeches, dancing, and celebration.",
-    image: IMG.venue,
+    image: IMG.jcHall,
   },
 ];
 
 export const PARTY: { role: string; names: string[] }[] = [
-  { role: "Best Man & Best Girl", names: ["Fred", "Roselyne"] },
+  { role: "Best Man & Best Girl", names: ["Joseph", "Sophie"] },
   { role: "Matron & Patron", names: ["Lutundwa & Kihoko (Lead)", "Lucy & Moses", "Kelly & Davy"] },
   { role: "Twins Entrance", names: ["Neza", "Tuishime"] },
   { role: "Bible Boys", names: ["Mkunzi", "Edrie"] },

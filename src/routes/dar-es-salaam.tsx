@@ -57,7 +57,7 @@ function DarGuide() {
         </div>
       </section>
 
-      <Section icon={<Hotel className="size-5" />} label="Where to Stay" title="Accommodation" image={IMG.resort}>
+      <Section icon={<Hotel className="size-5" />} label="Where to Stay" title="Accommodation" image={IMG.accommodation}>
         <p className="text-muted-foreground leading-relaxed mb-8">
           A selection of hotels and beach resorts we recommend for our guests. Those along the northern coast — Bahari Beach, Jangwani and Mbezi — are closest to both White Sands Hotel and JC Hall Bahari Beach.
         </p>
@@ -96,7 +96,7 @@ function DarGuide() {
         </ul>
       </Section>
 
-      <Section icon={<Utensils className="size-5" />} label="Eat & Drink" title="Where to Eat" image={IMG.couple4} tone="alt">
+      <Section icon={<Utensils className="size-5" />} label="Eat & Drink" title="Where to Eat" image={IMG.whereToEat} tone="alt">
         <p className="text-muted-foreground leading-relaxed mb-8">
           From beachfront seafood to Swahili street food and rooftop cocktails — Dar has something for every mood.
         </p>
@@ -125,7 +125,7 @@ function DarGuide() {
         <CardGrid sectionKey="do" items={DAR_DO} imgs={imgs} />
       </Section>
 
-      <Section icon={<Palmtree className="size-5" />} label="Beyond Dar" title="Escape to Zanzibar" image={IMG.couple1} tone="alt">
+      <Section icon={<Palmtree className="size-5" />} label="Beyond Dar" title="Escape to Zanzibar" image={IMG.zanzibar} tone="alt">
         <p className="text-muted-foreground leading-relaxed mb-8">
           Zanzibar is a short 20-minute flight or 2-hour ferry from Dar — and well worth extending your trip for. White sand beaches, spice plantations, and a UNESCO-listed old town await.
         </p>

@@ -17,7 +17,7 @@ function Details() {
   return (
     <>
       <section className="relative h-[55dvh] overflow-hidden -mt-16">
-        <img src={IMG.ceremony} alt="" className="absolute inset-0 size-full object-cover" />
+        <img src={IMG.detailsHero} alt="" className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-6 pt-16">
           <p className="text-[10px] uppercase tracking-luxe text-white/80">The Celebration</p>
