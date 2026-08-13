@@ -1,0 +1,1 @@
+UPDATE public.gallery_images SET category = 'Proposal' WHERE id = '5371413e-a384-4d6d-b6fe-5f0eb6086beb';

@@ -16,6 +16,11 @@ import dressCode from "@/assets/IMG-20260812-WA0011_1.jpg.asset.json";
 import transport from "@/assets/IMG-20260812-WA0014.jpg.asset.json";
 import safety from "@/assets/IMG-20260810-WA0017_1.jpg.asset.json";
 import thingsToDo from "@/assets/IMG-20260809-WA0005.jpg.asset.json";
+import detailsHero from "@/assets/details-hero.jpg.asset.json";
+import jcHall from "@/assets/jc-hall.jpg.asset.json";
+import accommodation from "@/assets/accommodation.jpg.asset.json";
+import whereToEat from "@/assets/where-to-eat.jpg.asset.json";
+import zanzibar from "@/assets/zanzibar.jpg.asset.json";
 
 export const IMG = {
   hero: hero.url,
@@ -36,6 +41,11 @@ export const IMG = {
   transport: transport.url,
   safety: safety.url,
   thingsToDo: thingsToDo.url,
+  detailsHero: detailsHero.url,
+  jcHall: jcHall.url,
+  accommodation: accommodation.url,
+  whereToEat: whereToEat.url,
+  zanzibar: zanzibar.url,
 };
 
 
@@ -121,12 +131,12 @@ export const EVENTS = [
     address: "JC Hall, Bahari Beach, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=JC+Hall+Bahari+Beach+Dar+es+Salaam",
     desc: "Reception, dinner, speeches, dancing, and celebration.",
-    image: IMG.venue,
+    image: IMG.jcHall,
   },
 ];
 
 export const PARTY: { role: string; names: string[] }[] = [
-  { role: "Best Man & Best Girl", names: ["Fred", "Roselyne"] },
+  { role: "Best Man & Best Girl", names: ["Joseph", "Sophie"] },
   { role: "Matron & Patron", names: ["Lutundwa & Kihoko (Lead)", "Lucy & Moses", "Kelly & Davy"] },
   { role: "Twins Entrance", names: ["Neza", "Tuishime"] },
   { role: "Bible Boys", names: ["Mkunzi", "Edrie"] },
