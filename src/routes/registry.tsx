@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Check, Gift } from "lucide-react";
+import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/registry")({
   head: () => ({
@@ -60,12 +60,14 @@ function Registry() {
       <section className="px-6 py-20 text-center">
         <Reveal>
           <SectionLabel>Pledge Registry</SectionLabel>
+
           <h1 className="mt-6 font-serif text-5xl sm:text-6xl">
             Pledge Registry
           </h1>
+
           <p className="max-w-xl mx-auto mt-6 font-display italic text-lg text-muted-foreground">
-            Instead of traditional gifts, we invite you to make a meaningful
-            pledge toward our life together.
+            Support our future together with a heartfelt pledge and your kind
+            blessings.
           </p>
         </Reveal>
       </section>
@@ -75,8 +77,11 @@ function Registry() {
           <Reveal>
             <div className="border border-accent bg-card p-10 text-center">
               <Check className="size-10 text-accent mx-auto mb-4" />
+
               <h2 className="font-serif text-3xl">Thank You</h2>
+
               <div className="gold-rule mx-auto my-5" />
+
               <p className="font-display italic text-foreground/80">
                 Your pledge has been received with heartfelt gratitude. Thank
                 you for supporting the beginning of our new journey together.
@@ -109,8 +114,10 @@ function Registry() {
               <Field
                 label="Pledge Amount *"
                 value={form.pledge_amount}
-                onChange={(v) => setForm({ ...form, pledge_amount: v })}
-                placeholder="e.g. TZS 150,000"
+                onChange={(v) =>
+                  setForm({ ...form, pledge_amount: v })
+                }
+                placeholder="150,000"
                 required
               />
 
