@@ -110,7 +110,7 @@ function Registry() {
                 label="Pledge Amount *"
                 value={form.pledge_amount}
                 onChange={(v) => setForm({ ...form, pledge_amount: v })}
-                placeholder="e.g. TZS 100,000"
+                placeholder="e.g. TZS 150,000"
                 required
               />
 
