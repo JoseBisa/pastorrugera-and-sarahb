@@ -34,7 +34,6 @@ function Details() {
               <div className="relative h-64 sm:h-80 overflow-hidden">
                 <img src={e.image} alt={e.venue} className="absolute inset-0 size-full object-cover transition-transform duration-700 hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                <p className="absolute top-4 left-5 text-[10px] uppercase tracking-luxe text-white/90 bg-black/40 backdrop-blur px-3 py-1.5 border border-white/20">Event {i + 1}</p>
               </div>
               <div className="p-7 sm:p-10">
                 <h2 className="font-serif text-4xl">{e.title}</h2>
