@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { IMG } from "@/lib/wedding-data";
-import { HOTELS, LOCAL_EATS, INTERNATIONAL_EATS, DAR_DO, ZANZIBAR, locationKey, type DarItem } from "@/lib/dar-data";
+import { HOTELS, LOCAL_EATS, INTERNATIONAL_EATS, DAR_DO_GROUPS, ZANZIBAR, locationKey, type DarItem } from "@/lib/dar-data";
 import { supabase } from "@/integrations/supabase/client";
 import darSkyline from "@/assets/dar-skyline.jpg.asset.json";
 import { MapPin, Hotel, Car, Shield, Utensils, Sparkles, Palmtree, Soup, ChefHat } from "lucide-react";
@@ -122,7 +122,22 @@ function DarGuide() {
 
 
       <Section icon={<Sparkles className="size-5" />} label="Explore" title="Things to Do in Dar" image={IMG.thingsToDo}>
-        <CardGrid sectionKey="do" items={DAR_DO} imgs={imgs} />
+        <div className="grid sm:grid-cols-2 gap-6">
+          {DAR_DO_GROUPS.map((g) => (
+            <div key={g.title} className="bg-card border border-border p-6 hover:border-accent transition-colors">
+              <p className="text-[10px] uppercase tracking-luxe text-accent">{g.title}</p>
+              <div className="gold-rule my-4" />
+              <ul className="space-y-2 text-sm text-foreground/80">
+                {g.places.map((pl) => (
+                  <li key={pl} className="flex gap-3">
+                    <span className="mt-1.5 size-1.5 rounded-full bg-accent shrink-0" />
+                    <span>{pl}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section icon={<Palmtree className="size-5" />} label="Beyond Dar" title="Escape to Zanzibar" image={IMG.zanzibar} tone="alt">

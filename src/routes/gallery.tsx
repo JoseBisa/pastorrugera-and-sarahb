@@ -8,7 +8,7 @@ import { GALLERY } from "@/lib/wedding-data";
 import { supabase } from "@/integrations/supabase/client";
 
 import { GalleryCarousel } from "@/components/gallery/GalleryCarousel";
-import { DEFAULT_CAPTION, GALLERY_CATEGORIES, type GalleryItem } from "@/lib/gallery";
+import { GALLERY_CATEGORIES, type GalleryItem } from "@/lib/gallery";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({

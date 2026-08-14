@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { DEFAULT_CAPTION, type GalleryItem } from "@/lib/gallery";
+import { type GalleryItem } from "@/lib/gallery";
 
 export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
   const [index, setIndex] = useState(0);
