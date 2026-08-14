@@ -104,16 +104,6 @@ function Gallery() {
               <img src={g.src} alt={g.caption ?? g.category} loading="lazy"
                 className="w-full h-auto group-hover:scale-105 transition-transform duration-[1.2s]" />
             </button>
-            <figcaption className="p-4 flex items-start justify-between gap-3">
-              <div className="min-w-0">
-                <p className="font-display italic text-sm text-foreground/80 line-clamp-3">
-                  {g.caption?.trim() || DEFAULT_CAPTION}
-                </p>
-                {g.uploaderName && (
-                  <p className="mt-1.5 text-[10px] uppercase tracking-luxe text-muted-foreground">— {g.uploaderName}</p>
-                )}
-              </div>
-            </figcaption>
           </motion.figure>
         ))}
       </div>
@@ -150,7 +140,6 @@ function Lightbox({ items, index, onClose, setIndex }: {
       </button>
 
       <div className="mt-5 w-full max-w-2xl rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-5 text-center text-white">
-        <p className="font-display italic text-lg">{item.caption?.trim() || DEFAULT_CAPTION}</p>
         <p className="mt-2 text-[10px] uppercase tracking-luxe text-white/60">
           {item.uploaderName ? `${item.uploaderName} · ` : ""}
           {item.uploadedAt ? new Date(item.uploadedAt).toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" }) : item.category}

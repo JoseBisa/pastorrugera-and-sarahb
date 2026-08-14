@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { STORY } from "@/lib/wedding-data";
 
@@ -45,8 +45,12 @@ function Milestone({ m, index }: { m: typeof STORY[number]; index: number }) {
   return (
     <div ref={ref} className={`grid sm:grid-cols-2 gap-8 sm:gap-14 items-center py-12 sm:py-20 ${flip ? "sm:[&>*:first-child]:order-2" : ""}`}>
       <div className="overflow-hidden">
-        <motion.img src={m.image} alt={m.title} style={{ y }}
-          className="w-full aspect-[4/5] object-cover shadow-luxe" />
+        {m.images && m.images.length > 1 ? (
+          <StorySlides images={m.images} title={m.title} />
+        ) : (
+          <motion.img src={m.image} alt={m.title} style={{ y }}
+            className="w-full aspect-[4/5] object-cover shadow-luxe" />
+        )}
       </div>
       <Reveal>
         <h2 className="font-serif text-4xl sm:text-5xl">{m.title}</h2>
@@ -54,6 +58,28 @@ function Milestone({ m, index }: { m: typeof STORY[number]; index: number }) {
         <div className="gold-rule my-6" />
         <p className="font-display text-lg text-foreground/80 leading-relaxed">{m.text}</p>
       </Reveal>
+    </div>
+  );
+}
+
+function StorySlides({ images, title }: { images: string[]; title: string }) {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setI(v => (v + 1) % images.length), 4500);
+    return () => clearInterval(t);
+  }, [images.length]);
+  return (
+    <div className="relative w-full aspect-[4/5] overflow-hidden shadow-luxe">
+      {images.map((src, idx) => (
+        <img key={src} src={src} alt={title}
+          className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ${idx === i ? "opacity-100" : "opacity-0"}`} />
+      ))}
+      <div className="absolute bottom-3 inset-x-0 flex justify-center gap-2">
+        {images.map((src, idx) => (
+          <button key={src} onClick={() => setI(idx)} aria-label={`Photo ${idx + 1}`}
+            className={`size-2 rounded-full transition-colors ${idx === i ? "bg-accent" : "bg-white/60"}`} />
+        ))}
+      </div>
     </div>
   );
 }

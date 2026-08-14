@@ -56,9 +56,6 @@ export function GalleryCarousel({ items }: { items: GalleryItem[] }) {
 
         <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 text-white">
           <div className="rounded-2xl bg-black/35 backdrop-blur-md border border-white/15 p-4 sm:p-5">
-            <p className="font-display italic text-base sm:text-xl leading-relaxed">
-              {current.caption?.trim() || DEFAULT_CAPTION}
-            </p>
             <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
               <p className="text-[10px] uppercase tracking-luxe text-white/70">
                 {current.uploaderName ? `Shared by ${current.uploaderName}` : "Shared with love"}
