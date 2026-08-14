@@ -42,13 +42,14 @@ function Milestone({ m, index }: { m: typeof STORY[number]; index: number }) {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
   const flip = index % 2 === 1;
+  const imgPosition = m.position ?? "center";
   return (
     <div ref={ref} className={`grid sm:grid-cols-2 gap-8 sm:gap-14 items-center py-12 sm:py-20 ${flip ? "sm:[&>*:first-child]:order-2" : ""}`}>
       <div className="overflow-hidden">
         {m.images && m.images.length > 1 ? (
-          <StorySlides images={m.images} title={m.title} />
+          <StorySlides images={m.images} title={m.title} position={imgPosition} />
         ) : (
-          <motion.img src={m.image} alt={m.title} style={{ y }}
+          <motion.img src={m.image} alt={m.title} style={{ y, objectPosition: imgPosition }}
             className="w-full aspect-[4/5] object-cover shadow-luxe" />
         )}
       </div>
@@ -62,7 +63,7 @@ function Milestone({ m, index }: { m: typeof STORY[number]; index: number }) {
   );
 }
 
-function StorySlides({ images, title }: { images: string[]; title: string }) {
+function StorySlides({ images, title, position }: { images: string[]; title: string; position?: string }) {
   const [i, setI] = useState(0);
   useEffect(() => {
     const t = setInterval(() => setI(v => (v + 1) % images.length), 4500);
@@ -72,7 +73,8 @@ function StorySlides({ images, title }: { images: string[]; title: string }) {
     <div className="relative w-full aspect-[4/5] overflow-hidden shadow-luxe">
       {images.map((src, idx) => (
         <img key={src} src={src} alt={title}
-          className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ${idx === i ? "opacity-100" : "opacity-0"}`} />
+          className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ${idx === i ? "opacity-100" : "opacity-0"}`}
+          style={{ objectPosition: position }} />
       ))}
       <div className="absolute bottom-3 inset-x-0 flex justify-center gap-2">
         {images.map((src, idx) => (

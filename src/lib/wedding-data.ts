@@ -16,6 +16,7 @@ import dressCode from "@/assets/IMG-20260812-WA0011_1.jpg.asset.json";
 import transport from "@/assets/IMG-20260812-WA0014.jpg.asset.json";
 import safety from "@/assets/IMG-20260810-WA0017_1.jpg.asset.json";
 import thingsToDo from "@/assets/IMG-20260809-WA0005.jpg.asset.json";
+import faithCouple from "@/assets/image_2-2.png.asset.json";
 import detailsHero from "@/assets/details-hero.jpg.asset.json";
 import jcHall from "@/assets/jc-hall.jpg.asset.json";
 import accommodation from "@/assets/accommodation.jpg.asset.json";
@@ -56,7 +57,7 @@ export const IMG = {
   whereToEat: whereToEat.url,
   zanzibar: zanzibar.url,
   met: p1.url,
-  faith: p2.url,
+  faith: faithCouple.url,
   proposal1: p4.url,
   proposal2: p3.url,
   proposal3: p5.url,
@@ -76,7 +77,7 @@ export const WEDDING = {
   location: "Dar es Salaam, Tanzania",
 };
 
-export const STORY: { title: string; year: string; image: string; images?: string[]; text: string }[] = [
+export const STORY: { title: string; year: string; image: string; images?: string[]; position?: string; text: string }[] = [
   {
     title: "How We Met",
     year: "2018",
@@ -93,6 +94,7 @@ export const STORY: { title: string; year: string; image: string; images?: strin
     title: "Our Faith",
     year: "Always",
     image: IMG.faith,
+    position: "50% 0%",
     text: "Our love story did not begin with us. It began with Him. We are two souls who found each other because we first found our way to God. The Seventh-day Adventist faith is not just a label we carry; it is the foundation upon which we build our lives and our home. It is the glue that holds us together and the compass that guides our steps. We believe in a God who loves unconditionally, a Saviour who gave everything, and a Sabbath that reminds us to rest in His presence. We believe in the power of prayer, the authority of Scripture, and the blessed hope of His soon return. We believe that marriage is a sacred covenant, a reflection of Christ's love for His church. Together, we have walked through seasons of joy and seasons of trial. And through it all, our faith has been our anchor. We have prayed together, worshipped together, and grown together in the knowledge of our Creator. Our children have seen us kneel in prayer. Our friends have seen us stand firm in truth. And our hearts have been shaped by the conviction that God is good, always. As we step into marriage, we do so with our eyes fixed on Jesus. He is the Author and Finisher of our faith, and He is the Author of our love story. \"As for me and my house, we will serve the Lord.\" (Joshua 24:15)"
   },
   {
