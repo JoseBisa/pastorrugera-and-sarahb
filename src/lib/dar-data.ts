@@ -42,6 +42,17 @@ export const DAR_DO: DarItem[] = [
   { name: "National Museum & House of Culture", note: "History, archaeology, and the famous Olduvai fossils.", map: "https://www.google.com/maps/search/?api=1&query=National+Museum+Dar+es+Salaam" },
 ];
 
+export type DarGroup = { title: string; places: string[] };
+
+export const DAR_DO_GROUPS: DarGroup[] = [
+  { title: "Visit Our Malls", places: ["Kunduchi Mall", "Mlimani City", "Dar Village Mall", "Vijana Mall", "City Mall", "GSM Mall", "The Slipway"] },
+  { title: "Visit a Spa", places: ["Healing Beauty Spa", "The Body Melody Massage", "Elegance"] },
+  { title: "Watch Movies", places: ["Mlimani City", "Dar Free Market", "Mkuki House"] },
+  { title: "Family Entertainment", places: ["Kunduchi Wet 'n' Wild Water Park", "Waterworld", "Castle in the Sky", "Fun City"] },
+  { title: "Visit the Beach", places: ["Giraffe", "White Sands", "Ledger Bahari Beach", "Bara Beach", "Kipepeo Beach", "The Landmark", "Ramada"] },
+  { title: "Zoo", places: ["Dar Zoo"] },
+];
+
 export const ZANZIBAR: DarItem[] = [
   { name: "Stone Town", note: "UNESCO old town — narrow alleys, spice markets, Freddie Mercury's birthplace.", map: "https://www.google.com/maps/search/?api=1&query=Stone+Town+Zanzibar" },
   { name: "Nungwi & Kendwa Beaches", note: "Postcard white-sand beaches in the north — best for swimming and sunsets.", map: "https://www.google.com/maps/search/?api=1&query=Nungwi+Beach+Zanzibar" },

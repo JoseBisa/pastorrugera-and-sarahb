@@ -21,6 +21,15 @@ import jcHall from "@/assets/jc-hall.jpg.asset.json";
 import accommodation from "@/assets/accommodation.jpg.asset.json";
 import whereToEat from "@/assets/where-to-eat.jpg.asset.json";
 import zanzibar from "@/assets/zanzibar.jpg.asset.json";
+import p1 from "@/assets/IMG-20260729-WA0015.jpg.asset.json";
+import p2 from "@/assets/image.png.asset.json";
+import p3 from "@/assets/image_9.png.asset.json";
+import p4 from "@/assets/IMG-20260808-WA0057.jpg.asset.json";
+import p5 from "@/assets/image_1.png.asset.json";
+import p6 from "@/assets/IMG-20260812-WA0049.jpg.asset.json";
+import p7 from "@/assets/image_2.png.asset.json";
+import p8 from "@/assets/IMG-20260808-WA0056.jpg.asset.json";
+import p9 from "@/assets/IMG-20260729-WA0022.jpg.asset.json";
 
 export const IMG = {
   hero: hero.url,
@@ -46,6 +55,15 @@ export const IMG = {
   accommodation: accommodation.url,
   whereToEat: whereToEat.url,
   zanzibar: zanzibar.url,
+  met: p1.url,
+  faith: p2.url,
+  proposal1: p4.url,
+  proposal2: p3.url,
+  proposal3: p5.url,
+  weddingDay1: p6.url,
+  weddingDay2: p7.url,
+  hopes1: p8.url,
+  hopes2: p9.url,
 };
 
 
@@ -58,11 +76,11 @@ export const WEDDING = {
   location: "Dar es Salaam, Tanzania",
 };
 
-export const STORY = [
+export const STORY: { title: string; year: string; image: string; images?: string[]; text: string }[] = [
   {
     title: "How We Met",
     year: "2018",
-    image: IMG.couple5,
+    image: IMG.met,
     text: "There are friends who are more than friends. They are angels sent from heaven. For us, that angel is our dear mutual friend, RJC. For a long time, our paths ran parallel, close enough to be noticed yet far enough to remain unknown. But heaven had a plan, and RJC was the gentle hand that brought our stories together. Then we finally met. When it happened, it felt like coming home. A quiet evening in Dar es Salaam made our universe pause. It was a chance encounter that was never really by chance. A shared laugh over coffee became the melody that would play on repeat in our hearts. What began as a simple moment unfolded into hours of conversation we never wanted to end. Love does not always arrive with thunder. Sometimes, it arrives softly, on the wings of a friend's prayer. That evening, two souls who had been searching for each other all along finally found their way home. And from that quiet beginning, a lifetime commitment was sparked."
   },
   {
@@ -74,25 +92,28 @@ export const STORY = [
   {
     title: "Our Faith",
     year: "Always",
-    image: IMG.family,
+    image: IMG.faith,
     text: "Our love story did not begin with us. It began with Him. We are two souls who found each other because we first found our way to God. The Seventh-day Adventist faith is not just a label we carry; it is the foundation upon which we build our lives and our home. It is the glue that holds us together and the compass that guides our steps. We believe in a God who loves unconditionally, a Saviour who gave everything, and a Sabbath that reminds us to rest in His presence. We believe in the power of prayer, the authority of Scripture, and the blessed hope of His soon return. We believe that marriage is a sacred covenant, a reflection of Christ's love for His church. Together, we have walked through seasons of joy and seasons of trial. And through it all, our faith has been our anchor. We have prayed together, worshipped together, and grown together in the knowledge of our Creator. Our children have seen us kneel in prayer. Our friends have seen us stand firm in truth. And our hearts have been shaped by the conviction that God is good, always. As we step into marriage, we do so with our eyes fixed on Jesus. He is the Author and Finisher of our faith, and He is the Author of our love story. \"As for me and my house, we will serve the Lord.\" (Joshua 24:15)"
   },
   {
     title: "The Proposal",
     year: "2025",
-    image: IMG.ring,
+    image: IMG.proposal1,
+    images: [IMG.proposal1, IMG.proposal2, IMG.proposal3],
     text: "Some moments are etched into eternity. Our proposal was one of them. It was not a grand stage, nor a crowded room. It was just us, in a moment that belonged only to God and to love. He looked into her eyes, and the world around them faded. In his hand rested a tanzanite, blue as the ocean that had witnessed their first date, precious as the journey that had brought them here. Then, he knelt. Down on one knee, humble and hopeful, he offered not just a ring, but the only one heart too. And she said YES. From that moment forward, nothing would ever be the same. And that was exactly how it was meant to be."
   },
   {
     title: "Wedding Day",
     year: "2026",
-    image: IMG.couple1,
+    image: IMG.weddingDay1,
+    images: [IMG.weddingDay1, IMG.weddingDay2],
     text: "On 20 December 2026, surrounded by the people we love, we will say I do. Two hearts. One promise. A lifetime of togetherness. In the presence of God, our families, and the friends who have walked with us, we will make vows not just with our lips, but with our very lives. Our children will stand with us, a beautiful reminder of the family we already are and the one we continue to build. Our parents will watch with tears of joy. Our friends will celebrate with laughter. And the God who brought us together will smile upon this sacred union. On that day, we will not just exchange rings. We will exchange our futures, our dreams, our very selves. We will step into forever, not as two separate souls, but as one."
   },
   {
     title: "Our Hopes and Dreams",
     year: "Forever",
-    image: IMG.couple2,
+    image: IMG.hopes1,
+    images: [IMG.hopes1, IMG.hopes2],
     text: "As we stand on the threshold of forever, our hearts are full of hope and our eyes are fixed on the future. We dream of a home rooted in faith, where prayer is the first response and gratitude the constant song. A home where our children, already so precious to us, will continue to grow in love, wisdom, and the knowledge of God. We dream of family dinners filled with laughter, Sabbath afternoons spent in rest and reflection, and quiet evenings watching the sun set over a life well lived. We dream of growing old together, perhaps in the peaceful embrace of the Usambara hills, where we will sit on the porch, hold hands, and count the blessings of every season we have shared. We dream of grandchildren visiting, of telling them the story of how it all began, and of leaving behind a legacy of faith that will outlive us. We hope to serve. To love. To give. To be a light in our community and a refuge for those in need. We hope to never stop learning, never stop growing, and never stop choosing each other, every single day. Above all, we hope to honor God in all we do, trusting that He who began a good work in us will carry it on to completion."
   },
 ];
@@ -131,24 +152,24 @@ export const EVENTS = [
     address: "JC Hall, Bahari Beach, Dar es Salaam",
     map: "https://www.google.com/maps/search/?api=1&query=JC+Hall+Bahari+Beach+Dar+es+Salaam",
     desc: "Reception, dinner, speeches, dancing, and celebration.",
-    image: IMG.jcHall,
+    image: IMG.venue,
   },
 ];
 
 export const PARTY: { role: string; names: string[] }[] = [
-  { role: "Best Man & Best Girl", names: ["Joseph", "Sophie"] },
+  { role: "Best Man & Best Girl", names: ["Joseph & Sophie"] },
   { role: "Matron & Patron", names: ["Lutundwa & Kihoko (Lead)", "Lucy & Moses", "Kelly & Davy"] },
-  { role: "Twins Entrance", names: ["Neza", "Tuishime"] },
-  { role: "Bible Boys", names: ["Mkunzi", "Edrie"] },
-  { role: "Church Manual & Hymn Boys", names: ["Lance", "Ethan"] },
-  { role: "Flower Girls", names: ["Esther", "Shivela"] },
-  { role: "Pillow Girls", names: ["Miriam", "Claudia"] },
-  { role: "Board 1 Kids", names: ["Abigail", "Solomon"] },
-  { role: "Board 2 Kids", names: ["Alex", "Alana"] },
+  { role: "Twins Entrance", names: ["Neza & Tuishime"] },
+  { role: "Bible Boys", names: ["Mkunzi & Edrie"] },
+  { role: "Church Manual & Hymn Boys", names: ["Lance & Ethan"] },
+  { role: "Flower Girls", names: ["Esther & Shivela"] },
+  { role: "Pillow Girls", names: ["Miriam & Claudia"] },
+  { role: "Board 1 Kids", names: ["Abigail & Solomon"] },
+  { role: "Board 2 Kids", names: ["Alex & Alana"] },
   { role: "Bridal Siblings", names: ["Joseph & Julie", "Phillip & Clara"] },
   { role: "Couples Team", names: ["Thabi & Elijah", "Kuda & Florian", "Marygee & Arthur", "Grace & Butholenkosi"] },
-  { role: "Maids", names: ["Debbie", "Julie", "Mugore", "Sarah Chu", "Neema Urassa", "Esther Kiangi", "Dorcas", "Luhle"] },
-  { role: "Grooms", names: ["Ndumiso", "Epaika", "Stephan", "Kayode", "Lusajo", "Leslie", "King", "Joshua"] },
+  { role: "Bridesmaids", names: ["Debbie", "Julie", "Mugore", "Sarah", "Neema", "Esther", "Dorcas", "Luhle"] },
+  { role: "Groomsmen", names: ["Ndumiso", "Epiaka", "Stephan", "Kayode", "Lusajo", "Leslie", "King", "Joshua"] },
   { role: "Children of the Couple", names: ["Isabelle & Michael", "Nyari & Kupa"] },
 ];
 
