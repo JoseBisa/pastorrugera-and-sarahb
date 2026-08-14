@@ -11,7 +11,6 @@ const links = [
   { to: "/party", label: "Wedding Party", num: "05" },
   { to: "/dar-es-salaam", label: "Visiting Dar", num: "06" },
   { to: "/guestbook", label: "Guestbook", num: "07" },
-  { to: "/registry", label: "Registry", num: "08" },
   { to: "/rsvp", label: "RSVP", num: "09" },
 ];
 
