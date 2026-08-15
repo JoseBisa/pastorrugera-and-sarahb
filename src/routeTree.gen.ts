@@ -37,11 +37,6 @@ const RsvpRoute = RsvpRouteImport.update({
   path: '/rsvp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RegistryRoute = RegistryRouteImport.update({
-  id: '/registry',
-  path: '/registry',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PartyRoute = PartyRouteImport.update({
   id: '/party',
   path: '/party',
@@ -95,7 +90,6 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/guestbook': typeof GuestbookRoute
   '/party': typeof PartyRoute
-  '/registry': typeof RegistryRoute
   '/rsvp': typeof RsvpRoute
   '/share': typeof ShareRoute
   '/story': typeof StoryRoute
@@ -109,7 +103,6 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/guestbook': typeof GuestbookRoute
   '/party': typeof PartyRoute
-  '/registry': typeof RegistryRoute
   '/rsvp': typeof RsvpRoute
   '/share': typeof ShareRoute
   '/story': typeof StoryRoute
@@ -125,7 +118,6 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/guestbook': typeof GuestbookRoute
   '/party': typeof PartyRoute
-  '/registry': typeof RegistryRoute
   '/rsvp': typeof RsvpRoute
   '/share': typeof ShareRoute
   '/story': typeof StoryRoute
@@ -141,7 +133,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/guestbook'
     | '/party'
-    | '/registry'
     | '/rsvp'
     | '/share'
     | '/story'
@@ -155,7 +146,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/guestbook'
     | '/party'
-    | '/registry'
     | '/rsvp'
     | '/share'
     | '/story'
@@ -170,7 +160,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/guestbook'
     | '/party'
-    | '/registry'
     | '/rsvp'
     | '/share'
     | '/story'
@@ -186,7 +175,6 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   GuestbookRoute: typeof GuestbookRoute
   PartyRoute: typeof PartyRoute
-  RegistryRoute: typeof RegistryRoute
   RsvpRoute: typeof RsvpRoute
   ShareRoute: typeof ShareRoute
   StoryRoute: typeof StoryRoute
@@ -213,13 +201,6 @@ declare module '@tanstack/react-router' {
       path: '/rsvp'
       fullPath: '/rsvp'
       preLoaderRoute: typeof RsvpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/registry': {
-      id: '/registry'
-      path: '/registry'
-      fullPath: '/registry'
-      preLoaderRoute: typeof RegistryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/party': {
@@ -308,7 +289,6 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   GuestbookRoute: GuestbookRoute,
   PartyRoute: PartyRoute,
-  RegistryRoute: RegistryRoute,
   RsvpRoute: RsvpRoute,
   ShareRoute: ShareRoute,
   StoryRoute: StoryRoute,
