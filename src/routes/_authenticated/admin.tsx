@@ -30,7 +30,7 @@ function AdminPage() {
   const delGuest = useServerFn(adminDeleteGuestbook);
   const delRsvp = useServerFn(adminDeleteRsvp);
 
-  const [tab, setTab] = useState<"overview" | "rsvps" | "guestbook" | "contributions" | "images" | "gallery">("overview");
+  const [tab, setTab] = useState<"overview" | "rsvps" | "guestbook" | "contributions" | "pledges" | "images" | "gallery">("overview");
   const [bootstrapped, setBootstrapped] = useState(false);
 
   // Bootstrap admin claim on first visit
