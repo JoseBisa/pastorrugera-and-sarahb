@@ -15,6 +15,7 @@ import { Users, Heart, MessageSquare, Calendar, LogOut, Download, Trash2, Eye, E
 import { AdminPaymentMethods } from "@/components/admin/AdminPaymentMethods";
 import { AdminLocationImages } from "@/components/admin/AdminLocationImages";
 import { AdminGallery } from "@/components/admin/AdminGallery";
+import { AdminPledges } from "@/components/admin/AdminPledges";
 
 export const Route = createFileRoute("/_authenticated/admin")({
   component: AdminPage,
@@ -120,7 +121,7 @@ function AdminPage() {
       </header>
 
       <nav className="flex gap-1 border-b border-border mb-8">
-        {(["overview", "rsvps", "guestbook", "contributions", "images", "gallery"] as const).map(t => (
+        {(["overview", "rsvps", "guestbook", "contributions", "pledges", "images", "gallery"] as const).map(t => (
           <button key={t}
             onClick={() => setTab(t)}
             className={`px-5 py-3 text-[11px] uppercase tracking-luxe border-b-2 -mb-px transition-colors ${
@@ -218,6 +219,7 @@ function AdminPage() {
       )}
 
       {tab === "contributions" && <AdminPaymentMethods />}
+      {tab === "pledges" && <AdminPledges />}
       {tab === "images" && <AdminLocationImages />}
       {tab === "gallery" && <AdminGallery />}
     </main>
