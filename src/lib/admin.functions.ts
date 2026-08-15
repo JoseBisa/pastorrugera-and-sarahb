@@ -91,3 +91,27 @@ export const adminDeleteRsvp = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
     return { ok: true };
   });
+
+export const adminGetPledges = createServerFn({ method: "GET" })
+  .middleware([requireSupabaseAuth])
+  .handler(async ({ context }) => {
+    await assertAdmin(context);
+    const { data, error } = await (context.supabase as any)
+      .from("pledges")
+      .select("*")
+      .order("created_at", { ascending: false });
+    if (error) throw new Error(error.message);
+    const rows = (data ?? []) as { id: string; name: string; amount: number; created_at: string }[];
+    const total = rows.reduce((s, r) => s + Number(r.amount ?? 0), 0);
+    return { pledges: rows, total };
+  });
+
+export const adminDeletePledge = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((d: { id: string }) => d)
+  .handler(async ({ context, data }) => {
+    await assertAdmin(context);
+    const { error } = await (context.supabase as any).from("pledges").delete().eq("id", data.id);
+    if (error) throw new Error(error.message);
+    return { ok: true };
+  });
