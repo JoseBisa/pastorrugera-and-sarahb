@@ -6,7 +6,7 @@ import {
   Scripts,
   useRouterState,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/SiteNav";
@@ -24,7 +24,7 @@ function NotFound() {
   );
 }
 
-function ErrorBoundary({ error }: { error: Error }) {
+function ErrorFallback({ error }: { error: Error }) {
   useEffect(() => { console.error(error); }, [error]);
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center px-6 text-center">
@@ -33,7 +33,9 @@ function ErrorBoundary({ error }: { error: Error }) {
     </div>
   );
 }
-ErrorBoundary.preload = () => Promise.resolve();
+
+const ErrorBoundary = lazy(async () => ({ default: ErrorFallback }));
+ErrorBoundary.preload();
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
