@@ -1,12 +1,13 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
+  type ErrorComponentProps,
   createRootRouteWithContext,
   HeadContent,
   Scripts,
   useRouterState,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/SiteNav";
@@ -24,7 +25,7 @@ function NotFound() {
   );
 }
 
-function ErrorBoundary({ error }: { error: Error }) {
+function ErrorFallback({ error }: ErrorComponentProps) {
   useEffect(() => { console.error(error); }, [error]);
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center px-6 text-center">
@@ -33,6 +34,8 @@ function ErrorBoundary({ error }: { error: Error }) {
     </div>
   );
 }
+
+const ErrorBoundary = lazy(async () => ({ default: ErrorFallback }));
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
