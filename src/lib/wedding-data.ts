@@ -159,7 +159,7 @@ export const EVENTS = [
 
 export const PARTY: { role: string; names: string[] }[] = [
   { role: "Best Man & Best Girl", names: ["Joseph & Sophie"] },
-  { role: "Matron & Patron", names: ["Lutundwa & Kihoko (Lead)", "Lucy & Moses", "Kelly & Davy"] },
+  { role: "Matron & Patron", names: ["Lutundwa & Kihoko (Lead)", "Lucy & Moses"] },
   { role: "Twins Entrance", names: ["Neza & Tuishime"] },
   { role: "Bible Boys", names: ["Mkunzi & Edrie"] },
   { role: "Church Manual & Hymn Boys", names: ["Lance & Ethan"] },
@@ -168,9 +168,9 @@ export const PARTY: { role: string; names: string[] }[] = [
   { role: "Board 1 Kids", names: ["Abigail & Solomon"] },
   { role: "Board 2 Kids", names: ["Alex & Alana"] },
   { role: "Bridal Siblings", names: ["Joseph & Julie", "Phillip & Clara"] },
-  { role: "Couples Team", names: ["Thabi & Elijah", "Kuda & Florian", "Marygee & Arthur", "Grace & Butholenkosi"] },
-  { role: "Bridesmaids", names: ["Debbie", "Julie", "Mugore", "Sarah", "Neema", "Esther", "Dorcas", "Luhle"] },
-  { role: "Groomsmen", names: ["Ndumiso", "Epiaka", "Stephan", "Kayode", "Lusajo", "Leslie", "King", "Joshua"] },
+  { role: "Couples Team", names: ["Thabi & Elijah", "Kuda & Florian", "Marygee & Arthur"] },
+  { role: "Bridesmaids", names: ["Debbie", "Julie", "Mugore", "Sarah", "Esther", "Dorcas", "Luhle"] },
+  { role: "Groomsmen", names: ["Epiaka", "Stephan", "Kayode", "Lusajo", "Leslie", "Joshua"] },
   { role: "Children of the Couple", names: ["Isabelle & Michael", "Nyari & Kupa"] },
 ];
 
