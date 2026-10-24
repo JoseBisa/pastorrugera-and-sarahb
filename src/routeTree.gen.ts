@@ -9,57 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StoryRouteImport } from './routes/story'
-import { Route as ShareRouteImport } from './routes/share'
-import { Route as RsvpRouteImport } from './routes/rsvp'
-import { Route as PartyRouteImport } from './routes/party'
-import { Route as GuestbookRouteImport } from './routes/guestbook'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as DetailsRouteImport } from './routes/details'
-import { Route as DarEsSalaamRouteImport } from './routes/dar-es-salaam'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as DarEsSalaamRouteImport } from './routes/dar-es-salaam'
+import { Route as DetailsRouteImport } from './routes/details'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as GuestbookRouteImport } from './routes/guestbook'
+import { Route as PartyRouteImport } from './routes/party'
+import { Route as RsvpRouteImport } from './routes/rsvp'
+import { Route as ShareRouteImport } from './routes/share'
+import { Route as StoryRouteImport } from './routes/story'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 
-const StoryRoute = StoryRouteImport.update({
-  id: '/story',
-  path: '/story',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ShareRoute = ShareRouteImport.update({
-  id: '/share',
-  path: '/share',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RsvpRoute = RsvpRouteImport.update({
-  id: '/rsvp',
-  path: '/rsvp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartyRoute = PartyRouteImport.update({
-  id: '/party',
-  path: '/party',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuestbookRoute = GuestbookRouteImport.update({
-  id: '/guestbook',
-  path: '/guestbook',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DetailsRoute = DetailsRouteImport.update({
-  id: '/details',
-  path: '/details',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DarEsSalaamRoute = DarEsSalaamRouteImport.update({
-  id: '/dar-es-salaam',
-  path: '/dar-es-salaam',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -67,13 +36,44 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
-  id: '/_authenticated',
+const DarEsSalaamRoute = DarEsSalaamRouteImport.update({
+  id: '/dar-es-salaam',
+  path: '/dar-es-salaam',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DetailsRoute = DetailsRouteImport.update({
+  id: '/details',
+  path: '/details',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuestbookRoute = GuestbookRouteImport.update({
+  id: '/guestbook',
+  path: '/guestbook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartyRoute = PartyRouteImport.update({
+  id: '/party',
+  path: '/party',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RsvpRoute = RsvpRouteImport.update({
+  id: '/rsvp',
+  path: '/rsvp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShareRoute = ShareRouteImport.update({
+  id: '/share',
+  path: '/share',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoryRoute = StoryRouteImport.update({
+  id: '/story',
+  path: '/story',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -182,67 +182,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/story': {
-      id: '/story'
-      path: '/story'
-      fullPath: '/story'
-      preLoaderRoute: typeof StoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/share': {
-      id: '/share'
-      path: '/share'
-      fullPath: '/share'
-      preLoaderRoute: typeof ShareRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/rsvp': {
-      id: '/rsvp'
-      path: '/rsvp'
-      fullPath: '/rsvp'
-      preLoaderRoute: typeof RsvpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/party': {
-      id: '/party'
-      path: '/party'
-      fullPath: '/party'
-      preLoaderRoute: typeof PartyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guestbook': {
-      id: '/guestbook'
-      path: '/guestbook'
-      fullPath: '/guestbook'
-      preLoaderRoute: typeof GuestbookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/details': {
-      id: '/details'
-      path: '/details'
-      fullPath: '/details'
-      preLoaderRoute: typeof DetailsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dar-es-salaam': {
-      id: '/dar-es-salaam'
-      path: '/dar-es-salaam'
-      fullPath: '/dar-es-salaam'
-      preLoaderRoute: typeof DarEsSalaamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -252,11 +196,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dar-es-salaam': {
+      id: '/dar-es-salaam'
+      path: '/dar-es-salaam'
+      fullPath: '/dar-es-salaam'
+      preLoaderRoute: typeof DarEsSalaamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/details': {
+      id: '/details'
+      path: '/details'
+      fullPath: '/details'
+      preLoaderRoute: typeof DetailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guestbook': {
+      id: '/guestbook'
+      path: '/guestbook'
+      fullPath: '/guestbook'
+      preLoaderRoute: typeof GuestbookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/party': {
+      id: '/party'
+      path: '/party'
+      fullPath: '/party'
+      preLoaderRoute: typeof PartyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rsvp': {
+      id: '/rsvp'
+      path: '/rsvp'
+      fullPath: '/rsvp'
+      preLoaderRoute: typeof RsvpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/share': {
+      id: '/share'
+      path: '/share'
+      fullPath: '/share'
+      preLoaderRoute: typeof ShareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/story': {
+      id: '/story'
+      path: '/story'
+      fullPath: '/story'
+      preLoaderRoute: typeof StoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
