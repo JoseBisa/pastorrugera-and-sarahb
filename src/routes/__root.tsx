@@ -33,6 +33,7 @@ function ErrorBoundary({ error }: { error: Error }) {
     </div>
   );
 }
+ErrorBoundary.preload = () => Promise.resolve();
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
