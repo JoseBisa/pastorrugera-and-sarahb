@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
+  type ErrorComponentProps,
   createRootRouteWithContext,
   HeadContent,
   Scripts,
@@ -24,7 +25,7 @@ function NotFound() {
   );
 }
 
-function ErrorFallback({ error }: { error: Error }) {
+function ErrorFallback({ error }: ErrorComponentProps) {
   useEffect(() => { console.error(error); }, [error]);
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center px-6 text-center">
@@ -35,7 +36,6 @@ function ErrorFallback({ error }: { error: Error }) {
 }
 
 const ErrorBoundary = lazy(async () => ({ default: ErrorFallback }));
-ErrorBoundary.preload();
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
